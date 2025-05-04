@@ -1,5 +1,6 @@
 
 import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 interface Project {
   title: string;
@@ -17,7 +18,7 @@ const PortfolioSection = () => {
     {
       title: "Automação de Backoffice Financeiro",
       category: "RPA",
-      description: "Implementação de RPA para automatizar processos de conciliação bancária e emissão de relatórios financeiros.",
+      description: "Implementação de RPA com N8N para automatizar processos de conciliação bancária e emissão de relatórios financeiros.",
       image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&w=800&h=500",
       results: ["Redução de 85% no tempo de processamento", "Eliminação de erros manuais", "ROI em 3 meses"]
     },
@@ -31,7 +32,7 @@ const PortfolioSection = () => {
     {
       title: "Integração de Sistemas ERP/CRM",
       category: "API",
-      description: "Integração entre múltiplos sistemas via API com sincronização bidirecional de dados em tempo real.",
+      description: "Integração entre múltiplos sistemas via API com sincronização bidirecional de dados em tempo real usando Make.",
       image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&w=800&h=500",
       results: ["Sincronização em tempo real", "Eliminação de tarefas duplicadas", "Dados consolidados em um só lugar"]
     },
@@ -84,9 +85,9 @@ const PortfolioSection = () => {
     : projects.filter(project => project.category === activeCategory);
 
   return (
-    <section id="portfolio" className="py-20 bg-gradient-to-b from-qrz-dark/90 to-qrz-dark">
+    <section id="portfolio" className="py-16 bg-gradient-to-b from-qrz-dark/90 to-qrz-dark">
       <div className="section-container">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <h2 className="section-title inline-block after:left-1/4 after:w-1/2">Portfólio</h2>
           <p className="text-lg mt-6 text-gray-300 max-w-3xl mx-auto">
             Conheça alguns dos projetos que desenvolvemos e os resultados que alcançamos para nossos clientes.
@@ -123,6 +124,7 @@ const PortfolioSection = () => {
                   src={project.image} 
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                  loading="lazy"
                 />
               </div>
               <div className="p-6">
@@ -147,8 +149,41 @@ const PortfolioSection = () => {
           ))}
         </div>
         
-        <div className="text-center mt-12">
-          <a href="#contact" className="btn-primary">
+        <div className="bg-black/40 backdrop-blur-sm border border-gray-800 rounded-xl p-6 mt-10">
+          <div className="text-center">
+            <h3 className="text-2xl font-bold mb-4 text-qrz-orange font-montserrat">Fluxos N8N Prontos para Uso</h3>
+            <p className="text-gray-300 mb-6">
+              Temos soluções prontas em N8N para diversas necessidades. Basta instalar as credenciais e começar a usar.
+              Conheça nossos fluxos pré-configurados para automação e inteligência artificial.
+            </p>
+            
+            <div className="flex flex-wrap gap-4 justify-center text-gray-300 mb-6">
+              <div className="flex items-center">
+                <span className="mr-2 text-qrz-orange">→</span>
+                Agentes de IA
+              </div>
+              <div className="flex items-center">
+                <span className="mr-2 text-qrz-orange">→</span>
+                Automação de WordPress
+              </div>
+              <div className="flex items-center">
+                <span className="mr-2 text-qrz-orange">→</span>
+                Extração de Dados
+              </div>
+              <div className="flex items-center">
+                <span className="mr-2 text-qrz-orange">→</span>
+                Respostas Automáticas
+              </div>
+            </div>
+            
+            <Link to="/flows" className="btn-primary">
+              Ver Todos os Fluxos N8N
+            </Link>
+          </div>
+        </div>
+        
+        <div className="text-center mt-10">
+          <a href="https://wa.me/5527999936682" target="_blank" rel="noopener noreferrer" className="btn-primary">
             Quero um projeto como esses
           </a>
         </div>

@@ -146,7 +146,7 @@ const PortfolioSection = () => {
     : projects.filter(project => project.category === activeCategory);
 
   return (
-    <section id="portfolio" className="py-12 bg-gradient-to-b from-qrz-dark/90 to-qrz-dark">
+    <section id="portfolio" className="py-8 bg-gradient-to-b from-qrz-dark/90 to-qrz-dark">
       <div className="section-container">
         <div className="text-center mb-10">
           <h2 className="section-title inline-block after:left-1/4 after:w-1/2">Portfólio</h2>
@@ -208,37 +208,6 @@ const PortfolioSection = () => {
               </div>
             </div>
           ))}
-        </div>
-        
-        <div className="bg-black/40 backdrop-blur-sm border border-gray-800 rounded-xl p-6 mt-10">
-          <div className="text-center mb-6">
-            <h3 className="text-2xl font-bold mb-4 text-qrz-orange font-montserrat">Fluxos N8N Prontos para Uso</h3>
-            <p className="text-gray-300 mb-6 max-w-3xl mx-auto">
-              Temos soluções prontas em N8N para diversas necessidades. Basta instalar as credenciais e começar a usar.
-              Conheça nossos fluxos pré-configurados para automação e inteligência artificial.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 mb-8">
-            {n8nFlows.map((flow, index) => (
-              <div key={index} className="border border-gray-800 rounded-lg p-4 flex items-center gap-4 bg-black/30 hover:border-qrz-blue-light transition-colors">
-                <div className={`flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center ${
-                  flow.category === 'ai' ? 'bg-purple-900/50' :
-                  flow.category === 'data' ? 'bg-blue-900/50' :
-                  flow.category === 'content' ? 'bg-green-900/50' : 'bg-orange-900/50'
-                }`}>
-                  <flow.icon className="w-5 h-5 text-white" />
-                </div>
-                <p className="text-sm font-medium text-gray-300">{flow.title}</p>
-              </div>
-            ))}
-          </div>
-          
-          <div className="text-center">
-            <Link to="/flows" className="btn-primary">
-              Ver Todos os Fluxos N8N
-            </Link>
-          </div>
         </div>
         
         <div className="text-center mt-8">

@@ -1,7 +1,7 @@
 
 const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden py-12">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden py-10">
       <div className="absolute inset-0 bg-qrz-dark z-0 opacity-60"></div>
       <div 
         className="absolute inset-0 z-0 opacity-20" 
@@ -12,7 +12,7 @@ const HeroSection = () => {
       ></div>
       
       <div className="container mx-auto px-4 relative z-10 text-center">
-        <div className="flex justify-center mb-6 animate-float">
+        <div className="flex justify-center mb-4 animate-float">
           <img 
             src="https://i.postimg.cc/L5qzYQmh/logoqrz-Editado.png"
             alt="QRZ Tech Logo" 
@@ -24,11 +24,11 @@ const HeroSection = () => {
           <span className="text-gradient">Inteligência Digital</span> que <span className="text-qrz-orange">Transforma</span>
         </h1>
 
-        <p className="text-lg md:text-xl max-w-3xl mx-auto mb-4 text-gray-300 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+        <p className="text-lg md:text-xl max-w-3xl mx-auto mb-3 text-gray-300 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
           Transformamos operações manuais em processos automatizados
         </p>
         
-        <p className="text-base md:text-lg max-w-3xl mx-auto mb-8 text-gray-400 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+        <p className="text-base md:text-lg max-w-3xl mx-auto mb-6 text-gray-400 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
           Especialistas em Automação, Inteligência Artificial, Desenvolvimento Web e Integração de Sistemas
         </p>
         

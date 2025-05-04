@@ -43,7 +43,7 @@ const Navbar = () => {
             <img 
               src="https://i.postimg.cc/L5qzYQmh/logoqrz-Editado.png"
               alt="QRZ Tech Logo" 
-              className="h-10 w-auto" 
+              className="h-12 w-auto" 
             />
           </Link>
           
@@ -53,7 +53,7 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 to={link.href}
-                className="text-gray-300 hover:text-qrz-orange text-sm font-medium transition-colors"
+                className="text-gray-300 hover:text-qrz-orange text-base font-medium transition-colors"
               >
                 {link.name}
               </Link>
@@ -66,7 +66,7 @@ const Navbar = () => {
               href="https://wa.me/5527999936682"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-4 py-2 border border-qrz-orange text-sm font-medium rounded-md text-qrz-orange hover:bg-qrz-orange/10 transition-colors"
+              className="inline-flex items-center px-5 py-2 border border-qrz-orange text-base font-medium rounded-md text-qrz-orange hover:bg-qrz-orange/10 transition-colors"
             >
               Fale Conosco
             </a>

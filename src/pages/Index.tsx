@@ -8,6 +8,7 @@ import PartnersSection from "../components/PartnersSection";
 import PortfolioSection from "../components/PortfolioSection";
 import SolutionsSection from "../components/SolutionsSection";
 import WhatsAppButton from "../components/WhatsAppButton";
+import N8nFlowsSection from "../components/N8nFlowsSection";
 
 const Index = () => {
   return (
@@ -17,6 +18,8 @@ const Index = () => {
       <AboutSection />
       <SolutionsSection />
       <PortfolioSection />
+      <div className="py-6"></div> {/* Additional spacing between Portfolio and Flows sections */}
+      <N8nFlowsSection />
       <PartnersSection />
       <ContactSection />
       <Footer />

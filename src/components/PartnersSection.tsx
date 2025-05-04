@@ -39,11 +39,11 @@ const PartnersSection = () => {
   ];
 
   return (
-    <section id="partners" className="py-12 bg-qrz-dark">
+    <section id="partners" className="py-8 bg-qrz-dark">
       <div className="section-container">
-        <div className="text-center mb-10">
+        <div className="text-center mb-8">
           <h2 className="section-title inline-block after:left-1/4 after:w-1/2">Nossos Clientes</h2>
-          <p className="text-lg mt-6 text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg mt-5 text-gray-300 max-w-3xl mx-auto">
             Empresas que confiam em nossas soluções tecnológicas para impulsionar seus negócios.
           </p>
         </div>
@@ -55,19 +55,19 @@ const PartnersSection = () => {
           {partners.map((partner, index) => (
             <div 
               key={index} 
-              className="flex justify-center p-4 bg-gray-900/50 rounded-lg hover:bg-gray-900/80 transition-all h-32 items-center"
+              className="flex justify-center p-4 bg-gray-900/50 rounded-lg hover:bg-gray-900/80 transition-all h-32 items-center group"
             >
               <img 
                 src={partner.logo} 
                 alt={partner.name} 
-                className="max-h-20 max-w-full object-contain filter hover:grayscale-0 transition-all duration-300" 
+                className="max-h-20 max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300" 
                 loading="lazy"
               />
             </div>
           ))}
         </div>
         
-        <div className="text-center mt-10">
+        <div className="text-center mt-8">
           <p className="text-gray-400">
             E muitas outras empresas que já transformaram seus processos com a QRZ Tech.
           </p>

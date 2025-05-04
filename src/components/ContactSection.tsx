@@ -1,5 +1,5 @@
 
-import { Phone, Mail, Instagram } from "lucide-react";
+import { Phone, Mail, Instagram, MessageSquare } from "lucide-react";
 
 const ContactSection = () => {
   const contactInfo = [
@@ -24,9 +24,9 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-16 bg-gradient-to-b from-qrz-dark to-black">
+    <section id="contact" className="py-10 bg-gradient-to-b from-qrz-dark to-black">
       <div className="section-container">
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           <h2 className="section-title inline-block after:left-1/4 after:w-1/2">Contato</h2>
           <p className="text-lg mt-6 text-gray-300 max-w-3xl mx-auto">
             Entre em contato conosco para discutir como podemos ajudar a transformar seu negócio com nossas soluções tecnológicas.
@@ -35,7 +35,7 @@ const ContactSection = () => {
         
         <div className="max-w-4xl mx-auto">
           <div className="bg-black/40 backdrop-blur-sm border border-gray-800 rounded-xl p-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {contactInfo.map((item, index) => (
                 <a 
                   key={index}
@@ -67,11 +67,7 @@ const ContactSection = () => {
                 rel="noopener noreferrer" 
                 className="btn-primary inline-flex items-center"
               >
-                <img 
-                  src="/lovable-uploads/af7cd64c-d683-4519-88d8-00e4c84e3a4a.png" 
-                  alt="WhatsApp" 
-                  className="w-5 h-5 mr-2"
-                />
+                <MessageSquare className="w-5 h-5 mr-2" />
                 Fale Conosco pelo WhatsApp
               </a>
             </div>

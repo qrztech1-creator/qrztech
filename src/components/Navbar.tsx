@@ -1,9 +1,12 @@
 
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
   
   useEffect(() => {
     const handleScroll = () => {
@@ -19,11 +22,12 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'Sobre', href: '#about' },
-    { name: 'Soluções', href: '#solutions' },
-    { name: 'Portfólio', href: '#portfolio' },
-    { name: 'Contato', href: '#contact' },
+    { name: 'Home', href: '/' },
+    { name: 'Sobre', href: isHomePage ? '#about' : '/#about' },
+    { name: 'Soluções', href: isHomePage ? '#solutions' : '/#solutions' },
+    { name: 'Portfólio', href: isHomePage ? '#portfolio' : '/#portfolio' },
+    { name: 'Fluxos N8N', href: '/flows' },
+    { name: 'Contato', href: isHomePage ? '#contact' : '/#contact' },
   ];
 
   return (
@@ -33,33 +37,35 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex justify-between items-center py-4 md:py-6">
+        <div className="flex justify-between items-center py-4 md:py-5">
           {/* Logo */}
-          <a href="#home" className="flex-shrink-0">
+          <Link to="/" className="flex-shrink-0">
             <img 
               src="https://i.postimg.cc/L5qzYQmh/logoqrz-Editado.png"
               alt="QRZ Tech Logo" 
               className="h-10 w-auto" 
             />
-          </a>
+          </Link>
           
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-7">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={link.href}
+                to={link.href}
                 className="text-gray-300 hover:text-qrz-orange text-sm font-medium transition-colors"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </nav>
           
           {/* Contact Button */}
           <div className="hidden md:block">
             <a
-              href="#contact"
+              href="https://wa.me/5527999936682"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center px-4 py-2 border border-qrz-orange text-sm font-medium rounded-md text-qrz-orange hover:bg-qrz-orange/10 transition-colors"
             >
               Fale Conosco
@@ -120,17 +126,19 @@ const Navbar = () => {
       >
         <div className="px-2 pt-2 pb-3 space-y-1 bg-black/95 backdrop-blur-md">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
-              href={link.href}
+              to={link.href}
               onClick={() => setMobileMenuOpen(false)}
               className="block px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white rounded-md"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
           <a
-            href="#contact"
+            href="https://wa.me/5527999936682"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setMobileMenuOpen(false)}
             className="block px-3 py-2 mt-4 text-base font-medium text-center rounded-md bg-qrz-orange text-white"
           >

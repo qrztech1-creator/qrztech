@@ -79,7 +79,7 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="pt-8 flex flex-col md:flex-row justify-between items-center">
+        <div className="pt-8 text-center">
           <p className="text-gray-500 text-sm">
             © {currentYear} QRZ Tech. Todos os direitos reservados.
           </p>

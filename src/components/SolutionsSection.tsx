@@ -87,33 +87,31 @@ const SolutionsSection = () => {
   }, []);
 
   return (
-    <section id="solutions" className="py-16 bg-qrz-dark">
+    <section id="solutions" className="py-12 bg-qrz-dark">
       <div className="section-container">
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           <h2 className="section-title inline-block after:left-1/4 after:w-1/2">Nossas Soluções</h2>
-          <p className="text-lg mt-6 text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg mt-4 text-gray-300 max-w-3xl mx-auto">
             Combinamos tecnologia, expertise e estratégia para transformar desafios em oportunidades de crescimento para o seu negócio.
           </p>
         </div>
         
-        <div ref={sectionRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div ref={sectionRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           {solutions.map((solution, index) => (
             <div 
               key={index}
-              className="solution-card opacity-0 bg-qrz-dark p-6 rounded-xl border border-gray-800 group transition-all duration-300"
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
+              className="solution-card opacity-0 bg-qrz-dark p-6 rounded-xl border border-gray-800 hover:border-qrz-orange/50 transition-all duration-300 hover:-translate-y-1"
             >
-              <div className="w-14 h-14 mb-5 rounded-lg flex items-center justify-center transition-all duration-300 group-hover:scale-110 bg-gradient-to-r from-qrz-blue to-qrz-blue-light group-hover:from-qrz-orange group-hover:to-qrz-orange/80">
+              <div className="w-14 h-14 mb-5 rounded-lg flex items-center justify-center transition-all duration-300 bg-gradient-to-r from-qrz-blue to-qrz-blue-light hover:from-qrz-orange hover:to-qrz-orange/80">
                 <solution.icon className="w-7 h-7 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-3 font-montserrat text-white group-hover:text-qrz-orange transition-colors">{solution.title}</h3>
+              <h3 className="text-xl font-bold mb-3 font-montserrat text-white hover:text-qrz-orange transition-colors">{solution.title}</h3>
               <p className="text-gray-400">{solution.description}</p>
             </div>
           ))}
         </div>
         
-        <div className="mt-12 text-center">
+        <div className="mt-10 text-center">
           <a href="https://wa.me/5527999936682" target="_blank" rel="noopener noreferrer" className="btn-primary">
             Solicite um Orçamento
           </a>

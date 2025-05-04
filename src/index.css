@@ -44,22 +44,11 @@
   }
 
   body {
-    @apply bg-qrz-dark text-foreground font-inter cursor-none md:cursor-none;
+    @apply bg-qrz-dark text-foreground font-inter;
   }
 
   html {
     scroll-behavior: smooth;
-  }
-  
-  /* Hide default cursor on desktop */
-  @media (min-width: 768px) {
-    * {
-      cursor: none !important;
-    }
-    
-    a, button, [role="button"], input, select, textarea {
-      cursor: none !important;
-    }
   }
 }
 
@@ -77,7 +66,7 @@
   }
   
   .section-title {
-    @apply text-3xl md:text-4xl font-bold font-montserrat text-qrz-orange mb-5 relative inline-block;
+    @apply text-3xl md:text-4xl font-bold font-montserrat text-qrz-orange mb-4 relative inline-block;
   }
   
   .section-title::after {
@@ -86,7 +75,7 @@
   }
   
   .section-container {
-    @apply max-w-7xl mx-auto px-4 py-8 sm:px-6 sm:py-10;
+    @apply max-w-7xl mx-auto px-4 py-6 sm:px-6 sm:py-8;
   }
   
   .card-hover {
@@ -105,5 +94,64 @@
   .btn-secondary {
     @apply px-6 py-2 rounded-md border-2 border-qrz-orange text-qrz-orange font-medium transition-all 
     hover:bg-qrz-orange/10 hover:scale-105;
+  }
+  
+  /* For partner logos */
+  .partner-logo {
+    @apply transition-all duration-300 filter grayscale hover:grayscale-0 hover:scale-105;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-fade-in-up {
+    animation: fade-in-up 0.5s ease-out forwards;
+  }
+  
+  .animate-ping {
+    animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse-slow 3s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes ping {
+    75%, 100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes pulse-slow {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
   }
 }

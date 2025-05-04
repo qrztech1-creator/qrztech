@@ -1,7 +1,7 @@
 
 const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden py-16">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden py-12">
       <div className="absolute inset-0 bg-qrz-dark z-0 opacity-60"></div>
       <div 
         className="absolute inset-0 z-0 opacity-20" 

@@ -84,15 +84,15 @@ const Flows = () => {
     <main className="bg-qrz-dark text-white min-h-screen">
       <Navbar />
       
-      <section className="py-12 bg-gradient-to-b from-qrz-dark to-qrz-dark/90">
+      <section className="py-8 bg-gradient-to-b from-qrz-dark to-qrz-dark/90">
         <div className="container mx-auto px-4">
-          <div className="mb-8">
-            <Link to="/" className="inline-flex items-center text-gray-400 hover:text-qrz-orange mb-6 transition-colors group">
+          <div className="mb-6">
+            <Link to="/" className="inline-flex items-center text-gray-400 hover:text-qrz-orange mb-4 transition-colors group">
               <ArrowLeft className="w-5 h-5 mr-2 group-hover:translate-x-[-4px] transition-transform" />
               <span>Voltar para a página inicial</span>
             </Link>
             
-            <h1 className="text-4xl md:text-5xl font-bold font-montserrat mb-5">
+            <h1 className="text-4xl md:text-5xl font-bold font-montserrat mb-4">
               Fluxos <span className="text-qrz-orange">N8N</span> Prontos
             </h1>
             
@@ -131,7 +131,7 @@ const Flows = () => {
                     href={flow.buyLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full py-3 bg-[#003080] text-white text-center rounded-md hover:bg-[#00408f] transition-colors font-medium flex items-center justify-center"
+                    className="w-full py-3 bg-[#002060] text-white text-center rounded-md hover:bg-[#003080] transition-colors font-medium flex items-center justify-center"
                   >
                     <span>COMPRAR AGORA</span>
                   </a>
@@ -140,8 +140,8 @@ const Flows = () => {
             ))}
           </div>
           
-          <div className="text-center mt-10">
-            <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-5">
+          <div className="text-center mt-8">
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-4">
               Não encontrou o que procura? Entre em contato para desenvolvermos uma solução personalizada para o seu negócio.
             </p>
             <a 

@@ -7,7 +7,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Flows from "./pages/Flows";
 import NotFound from "./pages/NotFound";
-import CursorEffect from "./components/CursorEffect";
 
 const queryClient = new QueryClient();
 
@@ -17,7 +16,6 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <CursorEffect />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/flows" element={<Flows />} />

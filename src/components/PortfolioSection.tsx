@@ -1,6 +1,13 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { 
+  Database, 
+  Code, 
+  Network, 
+  Cpu, 
+  MessageSquare 
+} from "lucide-react";
 
 interface Project {
   title: string;
@@ -8,6 +15,12 @@ interface Project {
   description: string;
   image: string;
   results: string[];
+}
+
+interface FlowItem {
+  title: string;
+  category: string;
+  icon: React.ElementType;
 }
 
 const PortfolioSection = () => {
@@ -52,6 +65,54 @@ const PortfolioSection = () => {
     },
   ];
 
+  const n8nFlows: FlowItem[] = [
+    {
+      title: "Agente de IA Completo",
+      category: "ai",
+      icon: Cpu
+    },
+    {
+      title: "Gerador de Conteúdo com IA e WordPress",
+      category: "content",
+      icon: Code
+    },
+    {
+      title: "Agente de IA para E-mails",
+      category: "ai",
+      icon: MessageSquare
+    },
+    {
+      title: "Disparador em Massa com IA",
+      category: "marketing",
+      icon: Network
+    },
+    {
+      title: "Resumidor de Grupos do WhatsApp",
+      category: "ai",
+      icon: MessageSquare
+    },
+    {
+      title: "Extrator de Dados do Google Maps",
+      category: "data",
+      icon: Database
+    },
+    {
+      title: "Raspador de Páginas Web",
+      category: "data",
+      icon: Code
+    },
+    {
+      title: "Extrator de Notícias Diário",
+      category: "content",
+      icon: Network
+    },
+    {
+      title: "Transcrição de Reuniões com IA",
+      category: "ai",
+      icon: Cpu
+    },
+  ];
+
   const categories = ['all', 'RPA', 'Web App', 'API', 'IA', 'Database'];
   
   useEffect(() => {
@@ -85,16 +146,16 @@ const PortfolioSection = () => {
     : projects.filter(project => project.category === activeCategory);
 
   return (
-    <section id="portfolio" className="py-16 bg-gradient-to-b from-qrz-dark/90 to-qrz-dark">
+    <section id="portfolio" className="py-12 bg-gradient-to-b from-qrz-dark/90 to-qrz-dark">
       <div className="section-container">
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           <h2 className="section-title inline-block after:left-1/4 after:w-1/2">Portfólio</h2>
-          <p className="text-lg mt-6 text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg mt-4 text-gray-300 max-w-3xl mx-auto">
             Conheça alguns dos projetos que desenvolvemos e os resultados que alcançamos para nossos clientes.
           </p>
         </div>
         
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-4 mb-10">
           {categories.map((category) => (
             <button
               key={category}
@@ -112,7 +173,7 @@ const PortfolioSection = () => {
         
         <div 
           ref={projectsRef}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {filteredProjects.map((project, index) => (
             <div 
@@ -150,39 +211,37 @@ const PortfolioSection = () => {
         </div>
         
         <div className="bg-black/40 backdrop-blur-sm border border-gray-800 rounded-xl p-6 mt-10">
-          <div className="text-center">
+          <div className="text-center mb-6">
             <h3 className="text-2xl font-bold mb-4 text-qrz-orange font-montserrat">Fluxos N8N Prontos para Uso</h3>
-            <p className="text-gray-300 mb-6">
+            <p className="text-gray-300 mb-6 max-w-3xl mx-auto">
               Temos soluções prontas em N8N para diversas necessidades. Basta instalar as credenciais e começar a usar.
               Conheça nossos fluxos pré-configurados para automação e inteligência artificial.
             </p>
-            
-            <div className="flex flex-wrap gap-4 justify-center text-gray-300 mb-6">
-              <div className="flex items-center">
-                <span className="mr-2 text-qrz-orange">→</span>
-                Agentes de IA
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 mb-8">
+            {n8nFlows.map((flow, index) => (
+              <div key={index} className="border border-gray-800 rounded-lg p-4 flex items-center gap-4 bg-black/30 hover:border-qrz-blue-light transition-colors">
+                <div className={`flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center ${
+                  flow.category === 'ai' ? 'bg-purple-900/50' :
+                  flow.category === 'data' ? 'bg-blue-900/50' :
+                  flow.category === 'content' ? 'bg-green-900/50' : 'bg-orange-900/50'
+                }`}>
+                  <flow.icon className="w-5 h-5 text-white" />
+                </div>
+                <p className="text-sm font-medium text-gray-300">{flow.title}</p>
               </div>
-              <div className="flex items-center">
-                <span className="mr-2 text-qrz-orange">→</span>
-                Automação de WordPress
-              </div>
-              <div className="flex items-center">
-                <span className="mr-2 text-qrz-orange">→</span>
-                Extração de Dados
-              </div>
-              <div className="flex items-center">
-                <span className="mr-2 text-qrz-orange">→</span>
-                Respostas Automáticas
-              </div>
-            </div>
-            
+            ))}
+          </div>
+          
+          <div className="text-center">
             <Link to="/flows" className="btn-primary">
               Ver Todos os Fluxos N8N
             </Link>
           </div>
         </div>
         
-        <div className="text-center mt-10">
+        <div className="text-center mt-8">
           <a href="https://wa.me/5527999936682" target="_blank" rel="noopener noreferrer" className="btn-primary">
             Quero um projeto como esses
           </a>

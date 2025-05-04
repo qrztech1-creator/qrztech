@@ -1,6 +1,6 @@
 
 import { useState, useRef, useEffect } from 'react';
-import { Database, Code, Api, Cpu, Settings } from "lucide-react";
+import { Database, Code, Network, Cpu, Settings } from "lucide-react";
 
 interface Solution {
   title: string;
@@ -26,7 +26,7 @@ const SolutionsSection = () => {
     {
       title: "Integração com APIs",
       description: "Conectamos diferentes sistemas e plataformas para criar um ecossistema digital coeso que compartilha dados de forma inteligente e segura.",
-      icon: Api
+      icon: Network
     },
     {
       title: "IA Aplicada",

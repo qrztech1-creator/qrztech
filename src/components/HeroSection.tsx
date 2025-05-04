@@ -23,10 +23,6 @@ const HeroSection = () => {
         <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold font-montserrat mb-4 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
           <span className="text-gradient">Inteligência Digital</span> que <span className="text-qrz-orange">Transforma</span>
         </h1>
-
-        <p className="text-lg md:text-xl max-w-3xl mx-auto mb-3 text-gray-300 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-          Transformamos operações manuais em processos automatizados
-        </p>
         
         <p className="text-base md:text-lg max-w-3xl mx-auto mb-6 text-gray-400 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
           Especialistas em Automação, Inteligência Artificial, Desenvolvimento Web e Integração de Sistemas

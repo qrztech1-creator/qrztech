@@ -1,5 +1,4 @@
-
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { 
   Database, 
   Code, 
@@ -21,6 +20,16 @@ interface FlowItem {
 }
 
 const N8nFlowsSection = () => {
+  const navigate = useNavigate();
+  
+  const handleNavigateToFlows = (e) => {
+    e.preventDefault();
+    // Navegar para a página de fluxos
+    navigate('/flows');
+    // Garantir que a página comece no topo
+    window.scrollTo(0, 0);
+  };
+
   const n8nFlows: FlowItem[] = [
     {
       title: "Agente de IA Completo",
@@ -114,9 +123,9 @@ const N8nFlowsSection = () => {
         </div>
         
         <div className="text-center">
-          <Link to="/flows" className="btn-primary">
+          <button onClick={handleNavigateToFlows} className="btn-primary">
             Ver Todos os Fluxos N8N
-          </Link>
+          </button>
         </div>
       </div>
     </section>

@@ -1,4 +1,3 @@
-
 const WhatsAppButton = () => {
   return (
     <a
@@ -8,9 +7,9 @@ const WhatsAppButton = () => {
       className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-16 h-16 rounded-full bg-transparent text-white shadow-lg transition-transform hover:scale-110"
       aria-label="Chat no WhatsApp"
     >
-      <img 
-        src="public/lovable-uploads/f4ba622f-d3db-4ff3-8c00-b4781c82f84c.png" 
-        alt="WhatsApp" 
+      <img
+        src="https://i.postimg.cc/T2y1hdhY/Print-Glyph-Green.png"
+        alt="WhatsApp"
         className="w-full h-full"
       />
     </a>

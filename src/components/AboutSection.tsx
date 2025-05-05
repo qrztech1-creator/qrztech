@@ -41,16 +41,16 @@ const AboutSection = () => {
           <div className="opacity-0" style={{ transitionDelay: '0.2s' }}>
             <h2 className="section-title">Sobre Nós</h2>
             <p className="text-lg mb-6 text-gray-300">
-              A <span className="text-qrz-orange font-semibold">QRZ Tech</span> nasceu para otimizar 
-              fluxos, aumentar a produtividade e reduzir custos através de soluções tecnológicas inovadoras.
+              A <span className="text-qrz-orange font-semibold">QRZ Tech</span> nasceu para <strong>otimizar</strong> o trabalho manual, 
+              fluxos, aumentar a produtividade e reduzir custos através de soluções tecnológicas, práticas e inovadoras.
             </p>
             <p className="text-lg mb-6 text-gray-300">
-              Nossa abordagem vai além da técnica - entregamos valor estratégico 
+            <strong>Nossa abordagem vai além da técnica</strong> - entregamos valor estratégico 
               para o seu negócio com tecnologia de ponta e expertise especializada.
             </p>
             <div className="flex flex-wrap gap-8 mt-8">
               <div>
-                <p className="text-3xl font-bold text-qrz-orange">100+</p>
+                <p className="text-3xl font-bold text-qrz-orange">124+</p>
                 <p className="text-gray-400">Projetos Entregues</p>
               </div>
               <div>
@@ -58,7 +58,7 @@ const AboutSection = () => {
                 <p className="text-gray-400">Clientes Ativos</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-qrz-orange">5+</p>
+                <p className="text-3xl font-bold text-qrz-orange">7+</p>
                 <p className="text-gray-400">Anos de Expertise</p>
               </div>
             </div>

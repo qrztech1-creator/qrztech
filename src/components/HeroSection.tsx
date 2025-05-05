@@ -25,7 +25,7 @@ const HeroSection = () => {
         </h1>
         
         <p className="text-base md:text-lg max-w-3xl mx-auto mb-6 text-gray-400 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-          Especialistas em Automação, Inteligência Artificial, Desenvolvimento Web e Integração de Sistemas
+          Automações, Inteligência Artificial, Desenvolvimento Web e Integração de Sistemas
         </p>
         
         <div className="flex flex-wrap justify-center gap-4 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>

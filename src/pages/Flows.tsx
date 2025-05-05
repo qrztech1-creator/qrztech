@@ -10,6 +10,7 @@ interface Flow {
   price: string;
   buyLink: string;
   category?: string;
+  imageUrl: string; // Adicionado campo para URL da imagem
 }
 
 const Flows = () => {
@@ -21,6 +22,7 @@ const Flows = () => {
       price: "R$497,99",
       buyLink: "https://www.asaas.com/c/70gyozn2dujz7flz",
       category: "ai",
+      imageUrl: "https://i.postimg.cc/dVf326nd/4.jpg",
     },
     {
       title: "Gerador de Conteúdo com IA e Postagem Automática no WordPress",
@@ -29,6 +31,7 @@ const Flows = () => {
       price: "R$397,99",
       buyLink: "https://www.asaas.com/c/7rapcccyxbto8sib",
       category: "content",
+      imageUrl: "https://i.postimg.cc/ZRtqgqG5/5.jpg",
     },
     {
       title: "Agente de I.A que Responde E-mail Automaticamente",
@@ -37,6 +40,7 @@ const Flows = () => {
       price: "R$297,99",
       buyLink: "https://www.asaas.com/c/bkhlejzobdeeeet1",
       category: "ai",
+      imageUrl: "https://i.postimg.cc/T1QYpJpK/6.jpg",
     },
     {
       title: "Disparador em Massa com IA",
@@ -45,6 +49,7 @@ const Flows = () => {
       price: "R$297,99",
       buyLink: "https://www.asaas.com/c/0ab3cl5xdw4vu5es",
       category: "marketing",
+      imageUrl: "https://i.postimg.cc/xTT1Bh4M/1.jpg",
     },
     {
       title: "Resumidor de Grupos do WhatsApp",
@@ -53,6 +58,7 @@ const Flows = () => {
       price: "R$97,99",
       buyLink: "https://www.asaas.com/c/k8n2ek0sw0lud0mk",
       category: "ai",
+      imageUrl: "https://i.postimg.cc/xTx1Q5w7/2.jpg",
     },
     {
       title: "Extrator de Dados Comerciais do Google Maps",
@@ -61,6 +67,7 @@ const Flows = () => {
       price: "R$197,99",
       buyLink: "https://www.asaas.com/c/3854g6o0l7wbhl30",
       category: "data",
+      imageUrl: "https://i.postimg.cc/zfWznryZ/3.jpg",
     },
     {
       title: "Raspador de Páginas Web (WebScrapping)",
@@ -69,6 +76,7 @@ const Flows = () => {
       price: "R$197,99",
       buyLink: "https://www.asaas.com/c/f4w8046h96r8g9fg",
       category: "data",
+      imageUrl: "https://i.postimg.cc/vBsQhNn1/7.jpg",
     },
     {
       title: "Extrator de Notícias Diário com Envio por E-mail ou WhatsApp",
@@ -77,6 +85,7 @@ const Flows = () => {
       price: "R$197,99",
       buyLink: "https://www.asaas.com/c/6dezd0k7d09owdte",
       category: "content",
+      imageUrl: "https://i.postimg.cc/653BMR8h/8.jpg",
     },
     {
       title: "Transcrição de Reuniões em Tempo Real com Extração de Insights",
@@ -85,6 +94,7 @@ const Flows = () => {
       price: "R$197,99",
       buyLink: "https://www.asaas.com/c/9fyn7px2vled5704",
       category: "ai",
+      imageUrl: "https://i.postimg.cc/3r9Kj9xR/9.jpg",
     },
   ];
 
@@ -98,6 +108,11 @@ const Flows = () => {
           <div className="mb-6">
             <h1 className="text-4xl md:text-5xl font-bold font-montserrat mb-4">
               Fluxos <span className="text-qrz-orange">N8N</span> Prontos
+            </h1>
+            <h1 className="text-3xl md:text- font-montserrat mb-4">
+              Ganhe <span className="text-qrz-blue">tempo</span> e{" "}
+              <span className="text-qrz-blue">dinheiro</span> com os fluxos da
+              QRZ Tech
             </h1>
 
             <p className="text-lg text-gray-300 max-w-3xl">
@@ -113,6 +128,14 @@ const Flows = () => {
                 key={index}
                 className="bg-black/40 backdrop-blur-sm border border-gray-800 rounded-xl p-6 flex flex-col hover:shadow-lg hover:shadow-qrz-blue/10 transition-all hover:-translate-y-1"
               >
+                {/* Imagem adicionada aqui */}
+                <div className="mb-4 flex items-center justify-center h-40">
+                  <img
+                    src={flow.imageUrl}
+                    alt={flow.title}
+                    className="max-h-40 max-w-full object-contain transition-transform hover:scale-105 border border-gray-700 rounded-lg p-1"
+                  />
+                </div>
                 <div className="mb-2">
                   <span
                     className={`text-xs px-2 py-1 rounded-full ${

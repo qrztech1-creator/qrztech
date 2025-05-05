@@ -56,19 +56,20 @@ const PortfolioSection = () => {
         "https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&w=800&h=500",
       results: [
         "Atendimento 24/7",
-        "Resolução de 90% dos tickets sem intervenção humana",
+        "Resolução de 90% dos tickets e atendimento sem intervenção humana",
         "Satisfação do cliente com + Velocidade",
       ],
     },
     {
       title: "Engenharia de Dados",
-      category: "Database",
-      description: "Análise de Dados",
+      category: "Dados",
+      description:
+        "Projeto completo de Análise de Dados para um supermercado dos USA.",
       image:
         "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&w=800&h=500",
       results: [
         "Processamento e análise completa de dados",
-        "Escalabilidade",
+        "Escalabilidade + Insights",
         "Backup e recuperação otimizados",
       ],
     },
@@ -122,7 +123,7 @@ const PortfolioSection = () => {
     },
   ];
 
-  const categories = ["all", "RPA", "Web App", "API", "IA", "Database"];
+  const categories = ["all", "Web App", "API", "IA", "Análise de Dados"];
 
   useEffect(() => {
     const observer = new IntersectionObserver(

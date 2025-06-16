@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate(); // ✅ Adicionar useNavigate
   const isHomePage = location.pathname === "/";
 
   useEffect(() => {
@@ -35,10 +36,31 @@ const Navbar = () => {
     if (link.type === "home" && isHomePage) {
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else if (link.type === "section") {
-      window.location.href = link.href;
-    } else {
-      // Navegação interna via React Router
-      window.location.href = link.href;
+      // Para seções, navegar para home primeiro se não estiver lá
+      if (!isHomePage) {
+        navigate("/");
+        // Aguardar a navegação e depois fazer o scroll
+        setTimeout(() => {
+          const elementId = link.href.split('#')[1];
+          const element = document.getElementById(elementId);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 100);
+      } else {
+        // Se já está na home, apenas fazer scroll
+        const elementId = link.href.split('#')[1];
+        const element = document.getElementById(elementId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    } else if (link.type === "route") {
+      // ✅ Usar navigate para rotas internas
+      navigate(link.href);
+    } else if (link.type === "home") {
+      // ✅ Usar navigate para ir para home
+      navigate("/");
     }
   };
 

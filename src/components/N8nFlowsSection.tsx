@@ -88,8 +88,8 @@ const N8nFlowsSection = () => {
   ];
 
   return (
-    <section className="py-8 bg-gradient-to-b from-qrz-dark to-black">
-      <div className="section-container">
+    <section className="py-8 bg-gradient-to-b from-qrz-dark to-black px-4 md:px-0">
+      <div className="section-container text-center">
         <div className="text-center mb-10">
           <h2 className="section-title inline-block after:left-1/4 after:w-1/2">Fluxos N8N</h2>
           <p className="text-lg mt-4 text-gray-300 max-w-3xl mx-auto">
@@ -97,11 +97,11 @@ const N8nFlowsSection = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 mb-8 justify-items-center md:justify-items-stretch">
           {n8nFlows.map((flow, index) => (
             <div 
               key={index} 
-              className="border border-gray-800 rounded-lg p-4 flex items-center gap-3 bg-black/30 hover:border-qrz-blue-light transition-colors"
+              className="border border-gray-800 rounded-lg p-4 flex items-center gap-3 bg-black/30 hover:border-qrz-blue-light transition-colors w-full max-w-sm md:max-w-none"
             >
               <div className={`flex-shrink-0 w-12 h-12 ${flow.color}/80 rounded-lg flex items-center justify-center shadow-lg`}>
                 <flow.icon className="w-6 h-6 text-white" />

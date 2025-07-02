@@ -35,10 +35,10 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <section id="about" className="py-16 bg-gradient-to-b from-qrz-dark to-qrz-dark/90">
-      <div className="section-container">
-        <div ref={sectionRef} className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div className="opacity-0" style={{ transitionDelay: '0.2s' }}>
+    <section id="about" className="py-16 bg-gradient-to-b from-qrz-dark to-qrz-dark/90 px-4 md:px-0">
+      <div className="section-container text-center md:text-left">
+        <div ref={sectionRef} className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center justify-items-center md:justify-items-start">
+          <div className="opacity-0 text-center md:text-left" style={{ transitionDelay: '0.2s' }}>
             <h2 className="section-title">Sobre Nós</h2>
             <p className="text-lg mb-6 text-gray-300">
               A <span className="text-qrz-orange font-semibold">QRZ Tech</span> nasceu para <strong>otimizar</strong> o trabalho manual, 
@@ -48,7 +48,7 @@ const AboutSection = () => {
             <strong>Nossa abordagem vai além da técnica</strong> - entregamos valor estratégico 
               para o seu negócio com tecnologia de ponta e expertise especializada.
             </p>
-            <div className="flex flex-wrap gap-8 mt-8">
+              <div className="flex flex-wrap gap-8 mt-8 justify-center md:justify-start">
               <div>
                 <p className="text-3xl font-bold text-qrz-orange">124+</p>
                 <p className="text-gray-400">Projetos Entregues</p>
@@ -64,7 +64,7 @@ const AboutSection = () => {
             </div>
           </div>
           
-          <div className="relative opacity-0" style={{ transitionDelay: '0.4s' }}>
+          <div className="relative opacity-0 w-full max-w-md md:max-w-none mx-auto md:mx-0" style={{ transitionDelay: '0.4s' }}>
             <div className="bg-black/40 backdrop-blur-sm border border-gray-800 rounded-xl p-6 shadow-xl">
               <div className="flex justify-center mb-6 border-b border-gray-800">
                 <button 

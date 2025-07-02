@@ -87,8 +87,8 @@ const SolutionsSection = () => {
   }, []);
 
   return (
-    <section id="solutions" className="py-12 bg-qrz-dark">
-      <div className="section-container">
+    <section id="solutions" className="py-12 bg-qrz-dark px-4 md:px-0">
+      <div className="section-container text-center">
         <div className="text-center mb-10">
           <h2 className="section-title inline-block after:left-1/4 after:w-1/2">Nossas Soluções</h2>
           <p className="text-lg mt-4 text-gray-300 max-w-3xl mx-auto">
@@ -96,17 +96,17 @@ const SolutionsSection = () => {
           </p>
         </div>
         
-        <div ref={sectionRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div ref={sectionRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 justify-items-center md:justify-items-stretch">
           {solutions.map((solution, index) => (
             <div 
               key={index}
-              className="solution-card opacity-0 bg-qrz-dark p-6 rounded-xl border border-gray-800 hover:border-qrz-orange/50 transition-all duration-300 hover:-translate-y-1"
+              className="solution-card opacity-0 bg-qrz-dark p-6 rounded-xl border border-gray-800 hover:border-qrz-orange/50 transition-all duration-300 hover:-translate-y-1 w-full max-w-sm md:max-w-none text-center md:text-left"
             >
-              <div className="w-14 h-14 mb-5 rounded-lg flex items-center justify-center transition-all duration-300 bg-gradient-to-r from-qrz-blue to-qrz-blue-light hover:from-qrz-orange hover:to-qrz-orange/80">
-                <solution.icon className="w-7 h-7 text-white" />
+              <div className="w-14 h-14 mb-5 rounded-lg flex items-center justify-center transition-all duration-300 bg-gradient-to-r from-qrz-blue to-qrz-blue-light hover:from-qrz-orange hover:to-qrz-orange/80 mx-auto md:mx-0">
+                <solution.icon className="w-7 h-7 text-white flex-shrink-0" />
               </div>
-              <h3 className="text-xl font-bold mb-3 font-montserrat text-white hover:text-qrz-orange transition-colors">{solution.title}</h3>
-              <p className="text-gray-400">{solution.description}</p>
+                <h3 className="text-xl font-bold mb-3 font-montserrat text-white hover:text-qrz-orange transition-colors">{solution.title}</h3>
+                <p className="text-gray-400">{solution.description}</p>
             </div>
           ))}
         </div>

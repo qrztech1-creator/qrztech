@@ -2,24 +2,24 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-black py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 pb-10">
+    <footer className="bg-black py-12 px-4 md:px-0">
+      <div className="max-w-7xl mx-auto px-2 sm:px-6 text-center md:text-left">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 pb-10 justify-items-center md:justify-items-start">
           {/* Logo + About */}
           <div>
-            <Link to="/" className="flex items-start">
+            <Link to="/" className="flex items-center justify-center md:justify-start">
               <img
                 src="https://i.postimg.cc/L5qzYQmh/logoqrz-Editado.png"
                 alt="QRZ Tech Logo"
                 className="h-14 w-auto mb-4"
               />
             </Link>
-            <p className="text-gray-400 mb-6">
+            <p className="text-gray-400 mb-6 text-center md:text-left">
               Transformamos operações manuais em processos automatizados e
               inteligentes para empresas de todos os portes.
             </p>
-            <div className="flex space-x-4">
-              <p className="text-gray-400 mb-6">Estamos também no Instagram:</p>
+            <div className="flex flex-col items-center md:flex-row md:items-start space-y-2 md:space-y-0 md:space-x-4">
+              <p className="text-gray-400 mb-2 md:mb-6 text-center md:text-left">Estamos também no Instagram:</p>
               <a
                 href="https://www.instagram.com/qrztech/"
                 className="text-gray-400 hover:text-qrz-orange transition-colors"

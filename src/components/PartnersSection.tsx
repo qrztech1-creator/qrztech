@@ -40,6 +40,11 @@ const PartnersSection = () => {
       url: "https://www.drestebansadovsky.com.br/"
     },
     { 
+      name: "CNI", 
+      logo: "https://i.postimg.cc/bvnMckpF/favi.png",
+      url: "https://cnisummit.comunidadecrown.com.br/"
+    },
+    { 
       name: "Amplity", 
       logo: "https://i.postimg.cc/sx7cG83r/amplity.png",
       url: "https://amplitydh.com.br/"
@@ -63,6 +68,11 @@ const PartnersSection = () => {
       name: "BioHealth Corretora", 
       logo: "https://biohealthcorretora.com/img/logo%20sit.png",
       url: "https://biohealthcorretora.com/"
+    },
+    { 
+      name: "Crown", 
+      logo: "https://majestic.comunidadecrown.com.br/wp-content/uploads/2024/11/Em-Alphaville-2-1-e1731955825728.png",
+      url: "https://majestic.comunidadecrown.com.br/"
     },
     { 
       name: "Dra. Manoela Sarmento", 

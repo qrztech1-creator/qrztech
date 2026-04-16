@@ -99,7 +99,7 @@ const FoodService = () => {
       image: images.erpInterface
     },
     {
-      title: "PDV - Frente de caixa (Windows/Android/SmartPOS)",
+      title: "PDV - Frente de caixa (Windows / Android / SmartPOS)",
       icon: <Monitor className="w-8 h-8" />,
       features: [
         "Operação rápida - atalhos e tela otimizada para balcão, comandas ou código de barras.",
@@ -218,8 +218,8 @@ const FoodService = () => {
             <Star className="w-12 h-12 fill-current" />
           </div>
           <h4 className="text-3xl font-bold text-qrz-dark mb-3">Eba!</h4>
-          <p className="text-xl md:text-2xl font-bold text-green-600 mb-2">30% de cashback</p>
-          <p className="text-gray-500 font-medium text-lg">no meu restaurante favorito 🍔</p>
+          <p className="text-lg md:text-2xl font-bold text-green-600 mb-2">30% de cashback</p>
+          <p className="text-gray-500 font-medium text-base md:text-lg leading-snug">no meu restaurante favorito 🍔</p>
         </div>
       ),
       image: images.clubeFidelidade
@@ -407,7 +407,7 @@ const FoodService = () => {
                 <a href="#resultados" onClick={(e) => handleNavClick(e, 'resultados')} className="text-gray-200 font-medium py-3 hover:text-qrz-orange transition-colors border-b border-white/5">Resultados</a>
                 <a href="#depoimentos" onClick={(e) => handleNavClick(e, 'depoimentos')} className="text-gray-200 font-medium py-3 hover:text-qrz-orange transition-colors border-b border-white/5">Depoimentos</a>
                 <a href="#faq" onClick={(e) => handleNavClick(e, 'faq')} className="text-gray-200 font-medium py-3 hover:text-qrz-orange transition-colors border-b border-white/5">FAQ</a>
-                <a href="https://wa.me/5527999936682" target="_blank" rel="noopener noreferrer" className="bg-qrz-orange text-white flex items-center justify-center font-bold uppercase py-3 px-2 rounded-lg transition-all mt-4 w-full text-[11px] min-[360px]:text-sm whitespace-nowrap">
+                <a href="https://wa.me/5527999936682" target="_blank" rel="noopener noreferrer" className="bg-qrz-orange text-white flex items-center justify-center font-bold uppercase py-3 px-2 rounded-lg transition-all mt-4 w-full text-[10px] min-[390px]:text-[12px] sm:text-sm whitespace-nowrap">
                   FALAR COM ESPECIALISTA
                 </a>
               </div>
@@ -451,32 +451,32 @@ const FoodService = () => {
             <strong>Seu negócio não pode parar!</strong> Tenha um sistema completo, seguro e que funciona mesmo sem internet ou energia.
           </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="flex flex-wrap justify-center gap-4"
-          >
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              href="https://wa.me/5527999936682?text=Olá! Gostaria de agendar uma demonstração do QRZ Food"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-qrz-orange hover:bg-orange-600 text-white font-bold uppercase py-3 md:py-4 px-2 md:px-8 rounded-lg transition-all duration-300 shadow-lg shadow-qrz-orange/30 hover:shadow-xl hover:shadow-qrz-orange/40 text-[10px] min-[360px]:text-[12px] sm:text-sm md:text-base whitespace-nowrap flex items-center justify-center w-full md:w-auto"
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="flex flex-wrap justify-center gap-3 min-[390px]:gap-4"
             >
-              AGENDAR DEMONSTRAÇÃO GRATUITA
-            </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              href="#solucoes"
-              onClick={(e) => handleNavClick(e, 'solucoes')}
-              className="bg-white/10 hover:bg-white/20 text-white font-bold uppercase py-3 md:py-4 px-2 md:px-8 rounded-lg backdrop-blur-sm transition-all duration-300 border border-white/20 text-[10px] min-[360px]:text-[12px] sm:text-sm md:text-base whitespace-nowrap flex items-center justify-center w-full md:w-auto mt-2 md:mt-0"
-            >
-              EXPLORAR O SISTEMA COMPLETO
-            </motion.a>
-          </motion.div>
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                href="https://wa.me/5527999936682?text=Olá! Gostaria de agendar uma demonstração do QRZ Food"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-qrz-orange hover:bg-orange-600 text-white font-bold uppercase py-3 md:py-4 px-2 md:px-8 rounded-lg transition-all duration-300 shadow-lg shadow-qrz-orange/30 hover:shadow-xl hover:shadow-qrz-orange/40 text-[9px] min-[390px]:text-[11px] sm:text-sm md:text-base whitespace-nowrap flex items-center justify-center w-full md:w-auto"
+              >
+                AGENDAR DEMONSTRAÇÃO GRATUITA
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                href="#solucoes"
+                onClick={(e) => handleNavClick(e, 'solucoes')}
+                className="bg-white/10 hover:bg-white/20 text-white font-bold uppercase py-3 md:py-4 px-2 md:px-8 rounded-lg backdrop-blur-sm transition-all duration-300 border border-white/20 text-[9px] min-[390px]:text-[11px] sm:text-sm md:text-base whitespace-nowrap flex items-center justify-center w-full md:w-auto mt-1 md:mt-0"
+              >
+                EXPLORAR O SISTEMA COMPLETO
+              </motion.a>
+            </motion.div>
         </div>
       </section>
 
@@ -555,7 +555,7 @@ const FoodService = () => {
                   href="https://wa.me/5527999936682"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-full bg-qrz-orange hover:bg-orange-600 text-white font-bold uppercase py-3 md:py-4 px-2 md:px-6 rounded-lg transition-all shadow-lg shadow-qrz-orange/20 hover:shadow-qrz-orange/40 text-[10px] min-[360px]:text-[12px] sm:text-sm md:text-lg relative z-10 whitespace-nowrap"
+                  className="flex items-center justify-center w-full bg-qrz-orange hover:bg-orange-600 text-white font-bold uppercase py-3 md:py-4 px-2 md:px-6 rounded-lg transition-all shadow-lg shadow-qrz-orange/20 hover:shadow-qrz-orange/40 text-[9px] min-[390px]:text-[11px] sm:text-sm md:text-lg relative z-10 whitespace-nowrap"
                 >
                   QUERO AUTOMATIZAR MEU NEGÓCIO
                 </a>
@@ -589,7 +589,8 @@ const FoodService = () => {
                   "https://i.postimg.cc/T158wV0q/es.png",
                   "https://i.postimg.cc/T158wV0c/fl.png",
                   "https://i.postimg.cc/13XRBNCR/logo-bio-sem-fundo.png",
-                  "https://i.postimg.cc/CMDW70kg/logo-branco-clinica-praia-da-costa.png"
+                  "https://i.postimg.cc/CMDW70kg/logo-branco-clinica-praia-da-costa.png",
+                  "https://i.postimg.cc/KjvxHdDv/Tag-e-etiqueta.png"
                 ].map((logo, index) => (
                   <div key={`logo-${i}-${index}`} className="flex-none mx-8 md:mx-12 w-24 md:w-32 flex items-center justify-center transition-all duration-300 hover:scale-105 opacity-90 hover:opacity-100 h-16 md:h-20">
                     <img
@@ -673,10 +674,10 @@ const FoodService = () => {
                 href="https://wa.me/5527999936682?text=Olá! Gostaria de saber se o QRZ Food atende meu segmento específico"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-full md:w-auto bg-qrz-orange hover:bg-orange-600 text-white font-bold uppercase py-3 px-2 md:px-8 rounded-lg transition-all duration-300 text-[10px] min-[360px]:text-[12px] sm:text-sm whitespace-nowrap"
+                className="inline-flex items-center justify-center w-full md:w-auto bg-qrz-orange hover:bg-orange-600 text-white font-bold uppercase py-3 px-2 md:px-8 rounded-lg transition-all duration-300 text-[9px] min-[390px]:text-[11px] sm:text-sm whitespace-nowrap"
               >
                 CONSULTAR SEGMENTO
-                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 ml-2 hidden min-[390px]:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </a>
@@ -770,7 +771,7 @@ const FoodService = () => {
                   {[
                     "Operação sem servidor local (híbrido on/offline)",
                     "Até 7 impressoras de produção por departamento ou KDS",
-                    "Delivery Digital web + puxada automática de marketplaces (iFood/Neemo/Rappi etc.)",
+                    "Delivery Digital web + puxada automática de marketplaces (iFood / Neemo / Rappi etc.)",
                     "Comandas NFC e tickets para eventos, leitura de ingressos",
                     "Integração com balanças e etiquetas EAN-13",
                     "TEF / SiTEF e SmartPOS como smartTEF",
@@ -791,7 +792,7 @@ const FoodService = () => {
                     href="https://wa.me/5527999936682"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 w-full md:w-auto bg-qrz-blue hover:bg-qrz-blue/90 text-white font-bold uppercase py-3 px-2 md:px-8 rounded-lg transition-all duration-300 shadow-lg text-[10px] min-[360px]:text-[12px] sm:text-sm whitespace-nowrap"
+                    className="inline-flex items-center justify-center gap-2 w-full md:w-auto bg-qrz-blue hover:bg-qrz-blue/90 text-white font-bold uppercase py-3 px-2 md:px-8 rounded-lg transition-all duration-300 shadow-lg text-[9px] min-[390px]:text-[11px] sm:text-sm whitespace-nowrap"
                   >
                     SOLICITAR INFRAESTRUTURA COMPLETA
                   </a>
@@ -831,7 +832,7 @@ const FoodService = () => {
                         <div className="bg-qrz-blue/20 p-3 rounded-xl mr-4">
                           <div className="text-qrz-blue">{module.icon}</div>
                         </div>
-                        <h3 className="text-xl md:text-2xl font-bold text-white">{module.title}</h3>
+                        <h3 className="text-xl md:text-2xl font-bold text-white break-words">{module.title}</h3>
                       </div>
 
                       <ul className="space-y-3">
@@ -1194,7 +1195,7 @@ const FoodService = () => {
                       href="https://wa.me/5527999936682?text=Olá! Tenho interesse no KIT Foodtruck Móvel"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center bg-qrz-orange hover:bg-orange-600 text-white font-bold uppercase py-3 md:py-4 px-2 md:px-10 rounded-xl transition-all duration-300 shadow-lg shadow-qrz-orange/30 text-[11px] min-[360px]:text-[13px] sm:text-sm md:text-lg w-full md:w-auto text-center hover:scale-105 whitespace-nowrap"
+                      className="inline-flex items-center justify-center bg-qrz-orange hover:bg-orange-600 text-white font-bold uppercase py-3 md:py-4 px-2 md:px-10 rounded-xl transition-all duration-300 shadow-lg shadow-qrz-orange/30 text-[9px] min-[390px]:text-[11px] sm:text-sm md:text-lg w-full md:w-auto text-center hover:scale-105 whitespace-nowrap"
                     >
                       QUERO ESSE SISTEMA NO MEU NEGÓCIO
                     </a>
@@ -1286,7 +1287,7 @@ const FoodService = () => {
           </div>
 
           <motion.div {...fadeUp(0.4)} className="text-center">
-            <a href="https://wa.me/5527999936682" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-full md:w-auto bg-qrz-dark hover:bg-[#0a1628] text-white font-bold uppercase py-3 md:py-4 px-2 md:px-12 rounded-xl transition-all shadow-xl shadow-gray-300 hover:shadow-2xl hover:scale-105 text-[11px] min-[360px]:text-sm md:text-lg whitespace-nowrap">
+            <a href="https://wa.me/5527999936682" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-full md:w-auto bg-qrz-dark hover:bg-[#0a1628] text-white font-bold uppercase py-3 md:py-4 px-2 md:px-12 rounded-xl transition-all shadow-xl shadow-gray-300 hover:shadow-2xl hover:scale-105 text-[10px] min-[390px]:text-[12px] md:text-lg whitespace-nowrap">
               COMEÇAR AGORA
             </a>
           </motion.div>
@@ -1379,7 +1380,7 @@ const FoodService = () => {
               <p className="text-gray-600 mb-5 text-sm md:text-base">
                 Nossa equipe está pronta para esclarecer todas as suas perguntas e mostrar como o <strong>QRZ Food</strong> pode transformar seu negócio.
               </p>
-              <a href="https://wa.me/5527999936682" target="_blank" rel="noopener noreferrer" className="btn-primary font-bold uppercase inline-flex items-center justify-center gap-2 w-full md:w-auto text-[10px] min-[360px]:text-[12px] sm:text-sm md:text-base px-2 md:px-8 py-3 whitespace-nowrap">
+              <a href="https://wa.me/5527999936682" target="_blank" rel="noopener noreferrer" className="btn-primary font-bold uppercase inline-flex items-center justify-center gap-2 w-full md:w-auto text-[9px] min-[390px]:text-[11px] sm:text-sm md:text-base px-2 md:px-8 py-3 whitespace-nowrap">
                 FALE CONOSCO NO WHATSAPP
               </a>
             </div>
@@ -1406,7 +1407,7 @@ const FoodService = () => {
               href="https://wa.me/5527999936682?text=Olá! Gostaria de saber mais sobre o QRZ Food"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-full md:w-auto bg-qrz-orange hover:bg-orange-600 text-white font-bold uppercase py-3 md:py-4 px-2 md:px-10 rounded-lg transition-all duration-300 text-[10px] min-[360px]:text-[11px] sm:text-[13px] md:text-lg shadow-lg shadow-qrz-orange/30 hover:shadow-xl hover:scale-105 whitespace-nowrap"
+              className="inline-flex items-center justify-center w-full md:w-auto bg-qrz-orange hover:bg-orange-600 text-white font-bold uppercase py-3 md:py-4 px-2 md:px-10 rounded-lg transition-all duration-300 text-[8.5px] min-[390px]:text-[10px] sm:text-[13px] md:text-lg shadow-lg shadow-qrz-orange/30 hover:shadow-xl hover:scale-105 whitespace-nowrap"
             >
               AGENDAR MINHA DEMONSTRAÇÃO GRATUITA
             </a>

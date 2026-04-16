@@ -81,7 +81,7 @@ const PartnersSection = () => {
     },
     { 
       name: "Fishing Business", 
-      logo: "https://www.fishingbusiness.com.br/img/logo%20fishing.png",
+      logo: "https://i.postimg.cc/J7KYFwYF/logo-fishing.png",
       url: "https://www.fishingbusiness.com.br/"
     },
     { 
@@ -120,7 +120,7 @@ const PartnersSection = () => {
                 <img 
                   src={partner.logo} 
                   alt={partner.name} 
-                  className="max-h-20 max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 hover:scale-105" 
+                  className="max-h-20 max-w-full object-contain filter grayscale" 
                   loading="lazy"
                 />
               </a>

@@ -79,7 +79,7 @@
   }
   
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-lg hover:shadow-qrz-blue/20 hover:scale-105;
+    @apply transition-all duration-300 hover:shadow-lg hover:shadow-qrz-blue/20;
   }
 
   .blue-gradient-bg {
@@ -87,18 +87,18 @@
   }
   
   .btn-primary {
-    @apply px-8 py-3 rounded-md bg-qrz-orange text-white font-medium transition-all 
-    hover:bg-qrz-orange/90 hover:scale-105 shadow-md shadow-qrz-orange/20;
+    @apply px-8 py-3 rounded-md bg-qrz-orange text-white font-medium transition-all
+    hover:bg-qrz-orange/90 shadow-md shadow-qrz-orange/20;
   }
   
   .btn-secondary {
-    @apply px-6 py-2 rounded-md border-2 border-qrz-orange text-qrz-orange font-medium transition-all 
-    hover:bg-qrz-orange/10 hover:scale-105;
+    @apply px-6 py-2 rounded-md border-2 border-qrz-orange text-qrz-orange font-medium transition-all
+    hover:bg-qrz-orange/10;
   }
   
   /* For partner logos */
   .partner-logo {
-    @apply transition-all duration-300 filter grayscale hover:grayscale-0 hover:scale-105;
+    @apply transition-all duration-300 filter grayscale hover:grayscale-0;
   }
 }
 
@@ -106,19 +106,40 @@
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
-  
+
   .animate-fade-in-up {
     animation: fade-in-up 0.5s ease-out forwards;
   }
-  
+
+  .animate-fade-in-up-once {
+    animation: fade-in-up 0.5s ease-out forwards;
+  }
+
   .animate-ping {
     animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
   }
-  
+
   .animate-pulse-slow {
     animation: pulse-slow 3s ease-in-out infinite;
   }
-  
+
+  .animate-scale-hover {
+    transition: transform 0.2s ease-out;
+  }
+
+  .animate-scale-hover:hover {
+    transform: scale(1.05);
+  }
+
+  .animate-lift-hover {
+    transition: all 0.2s ease-out;
+  }
+
+  .animate-lift-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+  }
+
   @keyframes float {
     0%, 100% {
       transform: translateY(0);
@@ -127,7 +148,7 @@
       transform: translateY(-10px);
     }
   }
-  
+
   @keyframes fade-in-up {
     0% {
       opacity: 0;
@@ -138,14 +159,14 @@
       transform: translateY(0);
     }
   }
-  
+
   @keyframes ping {
     75%, 100% {
       transform: scale(2);
       opacity: 0;
     }
   }
-  
+
   @keyframes pulse-slow {
     0%, 100% {
       opacity: 1;

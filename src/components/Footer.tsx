@@ -71,12 +71,12 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <Link
-                  to="/flows"
+                <a
+                  href="#automations"
                   className="text-gray-400 hover:text-qrz-orange transition-colors"
                 >
-                  Fluxos N8N
-                </Link>
+                  Automações Completas
+                </a>
               </li>
               <li>
                 <a

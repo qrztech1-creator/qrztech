@@ -10,21 +10,22 @@ const AboutSection = () => {
       (entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in-up');
+            entry.target.classList.add('animate-fade-in-up-once');
             observer.unobserve(entry.target);
           }
         });
       },
       { threshold: 0.1 }
     );
-    
+
     const children = sectionRef.current?.children;
     if (children) {
-      Array.from(children).forEach(child => {
+      Array.from(children).forEach((child, index) => {
+        (child as HTMLElement).style.animationDelay = `${index * 0.2}s`;
         observer.observe(child);
       });
     }
-    
+
     return () => {
       if (children) {
         Array.from(children).forEach(child => {

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { navigateToSection } from "@/utils/smoothScroll";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,7 +27,7 @@ const Navbar = () => {
     { name: "Sobre", href: "/#about", type: "section" },
     { name: "Soluções", href: "/#solutions", type: "section" },
     { name: "Portfólio", href: "/#portfolio", type: "section" },
-    { name: "Fluxos N8N", href: "/flows", type: "route" },
+    { name: "Automações completas", href: "/#automations", type: "section" },
     { name: "Contato", href: "/#contact", type: "section" },
   ];
 
@@ -36,25 +37,7 @@ const Navbar = () => {
     if (link.type === "home" && isHomePage) {
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else if (link.type === "section") {
-      // Para seções, navegar para home primeiro se não estiver lá
-      if (!isHomePage) {
-        navigate("/");
-        // Aguardar a navegação e depois fazer o scroll
-        setTimeout(() => {
-          const elementId = link.href.split('#')[1];
-          const element = document.getElementById(elementId);
-          if (element) {
-            element.scrollIntoView({ behavior: "smooth" });
-          }
-        }, 100);
-      } else {
-        // Se já está na home, apenas fazer scroll
-        const elementId = link.href.split('#')[1];
-        const element = document.getElementById(elementId);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
-      }
+      navigateToSection(link.href, isHomePage, navigate);
     } else if (link.type === "route") {
       // ✅ Usar navigate para rotas internas
       navigate(link.href);

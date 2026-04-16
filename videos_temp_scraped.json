@@ -1,0 +1,113 @@
+{
+  "food": [
+    {
+      "src": "https://video.wixstatic.com/video/6bae68_8e14a52c77264505b2b4fae4de238400/480p/mp4/file.mp4",
+      "title": "Veja na prática: clientes reais, resultados reais",
+      "ariaLabel": null
+    },
+    {
+      "src": "https://video.wixstatic.com/video/6bae68_09e90946e6f14db794857d4c8babeeb8/720p/mp4/file.mp4",
+      "title": "Veja na prática: clientes reais, resultados reais",
+      "ariaLabel": null
+    },
+    {
+      "src": "https://video.wixstatic.com/video/6bae68_54748428701a48338e7e0f04a6873ca1/720p/mp4/file.mp4",
+      "title": "Veja na prática: clientes reais, resultados reais",
+      "ariaLabel": null
+    },
+    {
+      "src": "https://video.wixstatic.com/video/6bae68_fc4cb673e40c4464af26ed947aeed269/480p/mp4/file.mp4",
+      "title": "Veja na prática: clientes reais, resultados reais",
+      "ariaLabel": null
+    },
+    {
+      "src": "https://video.wixstatic.com/video/6bae68_e547ff7891ae46b89281e523f977c22c/480p/mp4/file.mp4",
+      "title": "Veja na prática: clientes reais, resultados reais",
+      "ariaLabel": null
+    },
+    {
+      "src": "https://video.wixstatic.com/video/6bae68_3b911c8a14a1490289b731cde931fbbf/480p/mp4/file.mp4",
+      "title": "Veja na prática: clientes reais, resultados reais",
+      "ariaLabel": null
+    },
+    {
+      "src": "https://video.wixstatic.com/video/6bae68_2cae12135e444444be63dc5a4e43b815/480p/mp4/file.mp4",
+      "title": "Veja na prática: clientes reais, resultados reais",
+      "ariaLabel": null
+    },
+    {
+      "src": "https://video.wixstatic.com/video/6bae68_e361a89e345d4a1eb7285a9d8f98513c/480p/mp4/file.mp4",
+      "title": "Veja na prática: clientes reais, resultados reais",
+      "ariaLabel": null
+    },
+    {
+      "src": "https://video.wixstatic.com/video/6bae68_8483695eb71848a9a00011914b79795f/1080p/mp4/file.mp4",
+      "title": "Robo de Whatsapp",
+      "ariaLabel": null
+    },
+    {
+      "src": "https://video.wixstatic.com/video/6bae68_8102a819c0d64eb59f19c90731b43eeb/1080p/mp4/file.mp4",
+      "title": "App Entregas",
+      "ariaLabel": null
+    },
+    {
+      "src": "https://video.wixstatic.com/video/6bae68_bd9f7418f47b4bc9b4621cd8e3df2b45/1080p/mp4/file.mp4",
+      "title": "Conheça o sistema",
+      "ariaLabel": null
+    },
+    {
+      "src": "https://video.wixstatic.com/video/6bae68_1f8cf5b6e62a4bd5afea58de3dbe40da/1080p/mp4/file.mp4",
+      "title": "Conheça o sistema",
+      "ariaLabel": null
+    },
+    {
+      "src": "https://video.wixstatic.com/video/6bae68_5ca806e3f54d48519b8e7287c11a390b/720p/mp4/file.mp4",
+      "title": "Conheça o sistema",
+      "ariaLabel": null
+    },
+    {
+      "src": "https://video.wixstatic.com/video/6bae68_d490d98bbdb94764b5fa2a14edbfd582/720p/mp4/file.mp4",
+      "title": "Conheça o sistema",
+      "ariaLabel": null
+    },
+    {
+      "src": "https://video.wixstatic.com/video/6bae68_ef6c0ae4ff954b84a2d9adbd293dd17a/480p/mp4/file.mp4",
+      "title": "Conheça o sistema",
+      "ariaLabel": null
+    }
+  ],
+  "retail": [
+    {
+      "src": "https://video.wixstatic.com/video/6bae68_bd9f7418f47b4bc9b4621cd8e3df2b45/1080p/mp4/file.mp4",
+      "title": "Conheça o sistema",
+      "ariaLabel": null
+    },
+    {
+      "src": "https://video.wixstatic.com/video/6bae68_5ca806e3f54d48519b8e7287c11a390b/720p/mp4/file.mp4",
+      "title": "Conheça o sistema",
+      "ariaLabel": null
+    },
+    {
+      "src": "https://video.wixstatic.com/video/6bae68_d490d98bbdb94764b5fa2a14edbfd582/720p/mp4/file.mp4",
+      "title": "Conheça o sistema",
+      "ariaLabel": null
+    }
+  ],
+  "accounts": [
+    {
+      "src": "https://video.wixstatic.com/video/6bae68_a65e5295abc2449eb55aa9cb2d9d1b71/1080p/mp4/file.mp4",
+      "title": "Sistema de Ordem de Serviço online.",
+      "ariaLabel": null
+    },
+    {
+      "src": "https://video.wixstatic.com/video/6bae68_01b31580882f42e284bf55fc8585477d/1080p/mp4/file.mp4",
+      "title": "Sistema de cobranças recorrentes",
+      "ariaLabel": null
+    },
+    {
+      "src": "https://video.wixstatic.com/video/6bae68_610c4b5d313748e18e48bf6be73b020f/1080p/mp4/file.mp4",
+      "title": "Agendamentos Simplificados e Inteligentes com WhatsApp",
+      "ariaLabel": null
+    }
+  ]
+}

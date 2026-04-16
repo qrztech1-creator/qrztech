@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm list:*)",
+      "Bash(grep -n -B5 \"transition={{ duration: 0.6, delay: 0.4 }}\" \"C:\\\\Users\\\\Thiago Manhães\\\\Desktop\\\\QRZ\\\\qrz-tech-nexus\\\\src\\\\pages\\\\FoodService.tsx\")",
+      "Bash(dir:*)",
+      "Bash(xargs grep:*)"
+    ]
+  }
+}

@@ -15,13 +15,13 @@ const FAQSection = () => {
   const faqItems: FAQItem[] = [
     {
       question: "Como funciona o sistema QRZ Food?",
-      answer: "O QRZ Food é um sistema completo para gestão de restaurantes que funciona tanto online quanto offline. Inclui PDV, smartPOS integrado na maquininha, gestão na nuvem, delivery digital, integração com marketplaces (iFood, Rappi, etc.) e muito mais. Tudo em uma única plataforma unificada.",
+      answer: "O QRZ Food é um sistema completo para gestão de restaurantes que opera de forma híbrida (online com possibilidade de operação offline). Inclui PDV, smartPOS integrado na maquininha, gestão na nuvem, delivery digital, integração com marketplaces (iFood, Rappi, etc.) e muito mais. Tudo em uma única plataforma unificada.",
       icon: HelpCircle,
       category: "Geral"
     },
     {
-      question: "O sistema funciona sem internet?",
-      answer: "Sim! Nosso PDV funciona em modo offline. Você pode continuar registrando pedidos, imprimindo comandas e controlando o caixa normalmente. Quando a internet voltar, todos os dados são automaticamente sincronizados com a nuvem, sem perda de informações.",
+      question: "O sistema funciona offline?",
+      answer: "Sim! O QRZ Food é um sistema híbrido que possui capacidade de operar offline em determinados módulos. O funcionamento depende de alguns fatores, como os equipamentos da sua empresa e a infraestrutura de rede disponível. Para garantir a melhor experiência, realizamos uma call de diagnóstico para entender sua operação e definir a configuração ideal.",
       icon: Wifi,
       category: "Tecnologia"
     },
@@ -33,7 +33,7 @@ const FAQSection = () => {
     },
     {
       question: "Qual é o investimento necessário?",
-      answer: "Oferecemos planos flexíveis que se adaptam ao tamanho do seu negócio. Os valores variam conforme o número de pontos de venda, funcionalidades necessárias e volume de transações. Entre em contato para receber uma proposta personalizada sem compromisso.",
+      answer: "Você pode fazer seu orçamento agora mesmo! <a href='/food#orcamento' class='text-qrz-orange hover:underline font-bold'>Clique aqui para ir para a seção de orçamento</a>. Você leva menos de 30 segundos, basta colocar suas necessidades e receber uma proposta personalizada na hora!",
       icon: DollarSign,
       category: "Financeiro"
     },
@@ -69,7 +69,7 @@ const FAQSection = () => {
     },
     {
       question: "Precisa de servidor local?",
-      answer: "Não! Nossa solução é 100% na nuvem com operação híbrida (online/offline). Você não precisa investir em servidores caros ou manutenção de hardware. Tudo é gerenciado por nós com máxima segurança e disponibilidade.",
+      answer: "Não! Nossa solução é 100% na nuvem, sem necessidade de servidores locais. Caso sua operação demande funcionamento híbrido, verificamos os equipamentos necessários para viabilizar essa configuração. Tudo é gerenciado por nós com máxima segurança e disponibilidade.",
       icon: Server,
       category: "Infraestrutura"
     },
@@ -175,7 +175,7 @@ const FAQSection = () => {
                 <div className={`overflow-hidden transition-all duration-300 ${openIndex === index ? 'max-h-96' : 'max-h-0'}`}>
                   <div className="p-6 pt-0 border-t border-gray-800">
                     <div className="pl-14">
-                      <p className="text-gray-300 leading-relaxed">{item.answer}</p>
+                      <p className="text-gray-300 leading-relaxed" dangerouslySetInnerHTML={{ __html: item.answer }}></p>
                     </div>
                   </div>
                 </div>

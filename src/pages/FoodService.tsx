@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
-import { Check, Cloud, Smartphone, Tablet, QrCode, Monitor, Printer, Users, BarChart, Shield, Zap, MessageCircle, ShoppingCart, CreditCard, Package, Wallet, Bell, Star, TrendingUp, ChevronDown, Play, Menu, X } from 'lucide-react';
+import BudgetSimulator from "../components/BudgetSimulator";
+import { Check, Cloud, Smartphone, Tablet, QrCode, Monitor, Printer, Users, BarChart, Shield, Zap, MessageCircle, ShoppingCart, CreditCard, Package, Wallet, Bell, Star, TrendingUp, ChevronDown, Play, Menu, X, Calculator } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const FoodService = () => {
@@ -234,8 +235,8 @@ const FoodService = () => {
       icon: <Users className="w-6 h-6" />
     },
     {
-      title: "Operação sem servidor local",
-      description: "O PDV funciona online e offline e sincroniza com a nuvem quando a conexão retorna.",
+      title: "Operação em nuvem",
+      description: "Operação 100% em nuvem, sem necessidade de servidor local. Possibilidade de modo híbrido (on/offline) conforme os equipamentos e necessidades da sua empresa.",
       icon: <Cloud className="w-6 h-6" />
     },
     {
@@ -292,15 +293,15 @@ const FoodService = () => {
   const faqItems = [
     {
       question: "Como funciona o sistema <strong>QRZ Food</strong>?",
-      answer: "O <strong>QRZ Food</strong> é um sistema completo para gestão de restaurantes que funciona tanto online quanto offline. Inclui PDV, smartPOS integrado na maquininha, gestão na nuvem, delivery digital, integração com marketplaces (iFood, Rappi, etc.) e muito mais. Tudo em uma única plataforma unificada."
+      answer: "O <strong>QRZ Food</strong> é um sistema completo para gestão de restaurantes que opera de forma híbrida (online com possibilidade de operação offline). Inclui PDV, smartPOS integrado na maquininha, gestão na nuvem, delivery digital, integração com marketplaces (iFood, Rappi, etc.) e muito mais. Tudo em uma única plataforma unificada."
     },
     {
-      question: "O sistema funciona sem internet?",
-      answer: "Sim! Nosso PDV funciona em modo offline. Você pode continuar registrando pedidos, imprimindo comandas e controlando o caixa normalmente. Quando a internet voltar, todos os dados são automaticamente sincronizados com a nuvem, sem perda de informações."
+      question: "O sistema funciona offline?",
+      answer: "Sim! O <strong>QRZ Food</strong> é um sistema híbrido que possui capacidade de operar offline em determinados módulos. O funcionamento depende de alguns fatores, como os equipamentos da sua empresa e a infraestrutura de rede disponível. Para garantir a melhor experiência, realizamos uma call de diagnóstico para entender sua operação e definir a configuração ideal."
     },
     {
-      question: "E se acabar a energia?",
-      answer: "Tablets e terminais SmartPOS possuem bateria interna de longa duração. Mesmo durante quedas de energia, você continua atendendo normalmente utilizando nosso sistema na maquininha ou tablet, sem perder vendas ou dados."
+      question: "Como funciona a operação híbrida do sistema?",
+      answer: "Nosso sistema combina a potência da nuvem com a possibilidade de operação local. Dependendo dos equipamentos e da infraestrutura da sua empresa, configuramos o sistema para garantir máxima disponibilidade e performance. Para entender quais módulos podem operar offline na sua operação, agende uma call com nosso time."
     },
     {
       question: "Quanto tempo leva para implantar o sistema <strong>QRZ Food</strong>?",
@@ -308,7 +309,7 @@ const FoodService = () => {
     },
     {
       question: "Qual é o investimento necessário?",
-      answer: "Oferecemos planos flexíveis que se adaptam ao tamanho do seu negócio. Os valores variam conforme o número de pontos de venda, funcionalidades necessárias e volume de transações. Entre em contato para receber uma proposta personalizada sem compromisso."
+      answer: "Você pode fazer seu orçamento agora mesmo! <a href='#orcamento' class='text-qrz-orange hover:underline font-bold'>Clique aqui para ir para a seção de orçamento</a>. Você leva menos de 30 segundos, basta colocar suas necessidades e receber uma proposta personalizada na hora!"
     },
     {
       question: "O sistema é seguro?",
@@ -332,7 +333,7 @@ const FoodService = () => {
     },
     {
       question: "Preciso de um servidor local?",
-      answer: "Não! Nossa operação é 100% em nuvem. Basta ligar os equipamentos e conectar à internet para começar a vender. O sistema funciona de forma híbrida (online/offline), sem necessidade de investir em servidores locais."
+      answer: "Não! Nossa operação é baseada em nuvem, sem necessidade de servidores locais. Basta ligar os equipamentos e conectar à internet para começar a vender. Caso sua operação demande funcionamento offline, verificamos os equipamentos necessários para viabilizar essa configuração."
     },
     {
       question: "Posso usar o sistema em mais de uma unidade?",
@@ -371,6 +372,7 @@ const FoodService = () => {
           <div className="hidden md:flex gap-6 lg:gap-8 text-sm font-semibold text-gray-300">
             <a href="#home" onClick={(e) => handleNavClick(e, 'home')} className="hover:text-qrz-orange cursor-pointer transition-colors">Início</a>
             <a href="#solucoes" onClick={(e) => handleNavClick(e, 'solucoes')} className="hover:text-qrz-orange cursor-pointer transition-colors">Soluções</a>
+            <a href="#orcamento" onClick={(e) => handleNavClick(e, 'orcamento')} className="hover:text-qrz-orange cursor-pointer transition-colors">Orçamento</a>
             <a href="#resultados" onClick={(e) => handleNavClick(e, 'resultados')} className="hover:text-qrz-orange cursor-pointer transition-colors">Resultados</a>
             <a href="#depoimentos" onClick={(e) => handleNavClick(e, 'depoimentos')} className="hover:text-qrz-orange cursor-pointer transition-colors">Depoimentos</a>
             <a href="#faq" onClick={(e) => handleNavClick(e, 'faq')} className="hover:text-qrz-orange cursor-pointer transition-colors">FAQ</a>
@@ -404,6 +406,7 @@ const FoodService = () => {
               <div className="flex flex-col px-4 pt-2 pb-6 space-y-2 shadow-xl">
                 <a href="#home" onClick={(e) => handleNavClick(e, 'home')} className="text-gray-200 font-medium py-3 hover:text-qrz-orange transition-colors border-b border-white/5">Início</a>
                 <a href="#solucoes" onClick={(e) => handleNavClick(e, 'solucoes')} className="text-gray-200 font-medium py-3 hover:text-qrz-orange transition-colors border-b border-white/5">Soluções</a>
+                <a href="#orcamento" onClick={(e) => handleNavClick(e, 'orcamento')} className="text-gray-200 font-medium py-3 hover:text-qrz-orange transition-colors border-b border-white/5">Orçamento</a>
                 <a href="#resultados" onClick={(e) => handleNavClick(e, 'resultados')} className="text-gray-200 font-medium py-3 hover:text-qrz-orange transition-colors border-b border-white/5">Resultados</a>
                 <a href="#depoimentos" onClick={(e) => handleNavClick(e, 'depoimentos')} className="text-gray-200 font-medium py-3 hover:text-qrz-orange transition-colors border-b border-white/5">Depoimentos</a>
                 <a href="#faq" onClick={(e) => handleNavClick(e, 'faq')} className="text-gray-200 font-medium py-3 hover:text-qrz-orange transition-colors border-b border-white/5">FAQ</a>
@@ -448,7 +451,7 @@ const FoodService = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-gray-300 text-base md:text-xl font-medium max-w-3xl mx-auto mb-8 leading-relaxed"
           >
-            <strong>Seu negócio não pode parar!</strong> Tenha um sistema completo, seguro e que funciona mesmo sem internet ou energia.
+            <strong>Seu negócio não pode parar!</strong> Tenha um sistema robusto, híbrido e preparado para manter sua operação funcionando com segurança.
           </motion.p>
 
             <motion.div
@@ -490,7 +493,7 @@ const FoodService = () => {
             {/* Esquerda: Dor */}
             <motion.div {...fadeUp(0.1)} className="md:w-1/2">
               <h2 className="text-3xl md:text-4xl font-bold font-montserrat mb-6 text-qrz-dark leading-tight">
-                Seu negócio não pode parar — <br className="hidden md:block" /><span className="text-qrz-orange">nem por falta de internet ou energia</span>
+                Seu negócio não pode parar — <br className="hidden md:block" /><span className="text-qrz-orange">e nós garantimos a estrutura certa para isso</span>
               </h2>
 
               <div className="bg-red-50/70 rounded-2xl p-6 md:p-8 border border-red-100 mb-6">
@@ -530,8 +533,8 @@ const FoodService = () => {
 
                 <ul className="space-y-4 mb-8 relative z-10">
                   {[
-                    "Funciona mesmo sem internet",
-                    "Continuidade mesmo sem energia",
+                    "Sistema híbrido — opera online e offline*",
+                    "Estrutura sob medida para sua operação",
                     "Segurança total na operação",
                     "Controle completo em tempo real",
                     "Da operação à gestão, tudo em um só sistema"
@@ -544,6 +547,8 @@ const FoodService = () => {
                     </li>
                   ))}
                 </ul>
+
+                <p className="text-gray-500 text-xs mb-6 relative z-10">*Funcionamento offline depende da verificação dos equipamentos da empresa. Agende uma call para entendermos sua operação.</p>
 
                 <div className="bg-white/5 rounded-lg p-4 mb-8 border border-white/10 relative z-10">
                   <p className="text-gray-300 font-medium flex items-start">
@@ -697,7 +702,7 @@ const FoodService = () => {
                 Visão Geral
               </h2>
               <p className="text-lg md:text-xl text-gray-600">
-                Sistema totalmente híbrido, operando online e offline, com sincronização na nuvem, e não exige servidor local — basta ligar os equipamentos para começar a vender.
+                Sistema robusto em nuvem, com possibilidade de operação híbrida — a configuração ideal depende dos equipamentos e da infraestrutura da sua empresa. Agende uma call para entendermos sua operação.
               </p>
             </motion.div>
 
@@ -727,13 +732,13 @@ const FoodService = () => {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold mb-4 text-qrz-dark">Operação Híbrida: Online e Offline</h3>
+                  <h3 className="text-2xl font-bold mb-4 text-qrz-dark">Operação Híbrida</h3>
                   <p className="text-gray-700 mb-4">
-                    Nossa atuação é híbrida tanto online quanto offline. O sistema não para - você vai conseguir vender mesmo sem internet. Quando a conexão retorna, tudo sincroniza automaticamente.
+                    O sistema é projetado para operar de forma híbrida, combinando nuvem com possibilidade de modo offline. A configuração ideal depende dos equipamentos e infraestrutura da sua empresa — verificamos tudo isso em uma call de diagnóstico.
                   </p>
                   <div className="flex items-center space-x-3">
                     <div className="bg-qrz-orange/10 p-2 rounded-lg"><Check className="w-5 h-5 text-qrz-orange" /></div>
-                    <span className="font-semibold text-qrz-dark">Venda sem internet</span>
+                    <span className="font-semibold text-qrz-dark">Operação híbrida</span>
                   </div>
                 </div>
               </div>
@@ -769,7 +774,7 @@ const FoodService = () => {
               <motion.div {...fadeUp(0.2)}>
                 <div className="space-y-4">
                   {[
-                    "Operação sem servidor local (híbrido on/offline)",
+                    "Operação em nuvem com possibilidade de modo híbrido",
                     "Até 7 impressoras de produção por departamento ou KDS",
                     "Delivery Digital web + puxada automática de marketplaces (iFood / Neemo / Rappi etc.)",
                     "Comandas NFC e tickets para eventos, leitura de ingressos",
@@ -876,6 +881,30 @@ const FoodService = () => {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════════════════════
+          ORÇAMENTO - Simulador de Preços
+      ══════════════════════════════════════════════════════════════════ */}
+      <section id="orcamento" className="py-16 md:py-24 relative overflow-hidden bg-white">
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-30"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <motion.div {...fadeUp()}>
+              <span className="bg-qrz-orange/10 text-qrz-orange px-4 py-1.5 rounded-full text-sm font-bold tracking-wider mb-4 inline-block uppercase">Simulador Inteligente</span>
+              <h2 className="text-3xl md:text-5xl font-bold font-montserrat mb-6 text-qrz-dark leading-tight">
+                Faça seu <span className="text-qrz-orange">Orçamento</span>
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Descubra qual a solução ideal para o seu negócio e tenha uma estimativa de investimento em poucos cliques.
+              </p>
+            </motion.div>
+          </div>
+          
+          <motion.div {...fadeUp(0.2)}>
+            <BudgetSimulator />
+          </motion.div>
         </div>
       </section>
 
@@ -1312,7 +1341,7 @@ const FoodService = () => {
             <motion.div {...fadeUp(0.1)} className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10">
               <div className="space-y-6">
                 {[
-                  "A <strong>QRZ Food</strong> é uma solução integrada que atende desde pequenos estabelecimentos até grandes redes de restaurantes. Com uma abordagem híbrida (online/offline), o sistema garante operação contínua mesmo em locais com instabilidade de internet.",
+                  "A <strong>QRZ Food</strong> é uma solução integrada que atende desde pequenos estabelecimentos até grandes redes de restaurantes. O sistema é projetado para oferecer máxima disponibilidade, e a configuração ideal é definida em conjunto com o cliente, avaliando equipamentos e infraestrutura.",
                   "A plataforma foi desenvolvida com foco na experiência do usuário, tanto para o restaurante quanto para o cliente final. Todos os módulos conversam entre si, eliminando retrabalho e garantindo que as informações estejam sempre sincronizadas.",
                   "Além da tecnologia, oferecemos suporte humanizado e presencial quando necessário, acompanhando a implantação e garantindo que o restaurante opere com eficiência desde o primeiro dia."
                 ].map((text, index) => (

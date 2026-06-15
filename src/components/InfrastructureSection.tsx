@@ -5,7 +5,7 @@ const InfrastructureSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   const features = [
-    { icon: Server, text: "Operação sem servidor local (híbrido on/offline)" },
+    { icon: Server, text: "Operação em nuvem com possibilidade de modo híbrido" },
     { icon: Printer, text: "Até 7 impressoras de produção por departamento ou KDS" },
     { icon: Truck, text: "Delivery Digitalweb + puxada automática de marketplaces (iFood/Neemo/Rappi etc.)" },
     { icon: Ticket, text: "Comandas NFC e tickets para eventos, leitura de ingressos" },

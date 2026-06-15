@@ -1,6 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { navigateToSection } from "@/utils/smoothScroll";
 
 const Footer = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHomePage = location.pathname === "/";
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    navigateToSection(href, isHomePage, navigate);
+  };
+
   return (
     <footer className="bg-black py-12 px-4 md:px-0">
       <div className="max-w-7xl mx-auto px-2 sm:px-6 text-center md:text-left">
@@ -48,7 +58,8 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="#about"
+                  href="/#about"
+                  onClick={(e) => handleNavClick(e, '/#about')}
                   className="text-gray-400 hover:text-qrz-orange transition-colors"
                 >
                   Sobre Nós
@@ -56,7 +67,8 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#solutions"
+                  href="/#solutions"
+                  onClick={(e) => handleNavClick(e, '/#solutions')}
                   className="text-gray-400 hover:text-qrz-orange transition-colors"
                 >
                   Nossas Soluções
@@ -64,7 +76,8 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#portfolio"
+                  href="/#portfolio"
+                  onClick={(e) => handleNavClick(e, '/#portfolio')}
                   className="text-gray-400 hover:text-qrz-orange transition-colors"
                 >
                   Portfólio
@@ -72,7 +85,8 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#automations"
+                  href="/#automations"
+                  onClick={(e) => handleNavClick(e, '/#automations')}
                   className="text-gray-400 hover:text-qrz-orange transition-colors"
                 >
                   Automações Completas
@@ -80,7 +94,8 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#contact"
+                  href="/#contact"
+                  onClick={(e) => handleNavClick(e, '/#contact')}
                   className="text-gray-400 hover:text-qrz-orange transition-colors"
                 >
                   Contato

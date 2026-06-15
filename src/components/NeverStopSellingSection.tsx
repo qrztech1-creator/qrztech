@@ -1,5 +1,5 @@
 import { useRef, useEffect } from "react";
-import { WifiOff, Battery, Shield } from "lucide-react";
+import { Cloud, Settings, Shield } from "lucide-react";
 
 const NeverStopSellingSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -43,7 +43,7 @@ const NeverStopSellingSection = () => {
               Nunca Pare de <span className="text-qrz-orange">Vender</span>!
             </h2>
             <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-              Já imaginou se acaba a internet ou energia em qualquer momento?
+              Já imaginou o sistema parar no meio da operação?
             </p>
           </div>
 
@@ -56,21 +56,21 @@ const NeverStopSellingSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <div className="opacity-0 bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-xl p-6 hover:border-qrz-orange/30 transition-all duration-300">
               <div className="w-16 h-16 mb-4 rounded-full bg-qrz-blue/20 flex items-center justify-center mx-auto">
-                <WifiOff className="w-8 h-8 text-qrz-blue" />
+                <Cloud className="w-8 h-8 text-qrz-blue" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Sem internet?</h3>
+              <h3 className="text-xl font-bold mb-3">Sistema Híbrido</h3>
               <p className="text-gray-400">
-                Nosso PDV funciona em modo offline. Você continua registrando pedidos, imprimindo comandas e controlando o caixa. Assim que a conexão volta, os dados são sincronizados com a nuvem.
+                O QRZ Food opera de forma híbrida, combinando a potência da nuvem com possibilidade de operação offline. A configuração ideal depende dos equipamentos e infraestrutura da sua empresa — verificamos tudo isso com você.
               </p>
             </div>
 
             <div className="opacity-0 bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-xl p-6 hover:border-qrz-orange/30 transition-all duration-300">
               <div className="w-16 h-16 mb-4 rounded-full bg-qrz-orange/20 flex items-center justify-center mx-auto">
-                <Battery className="w-8 h-8 text-qrz-orange" />
+                <Settings className="w-8 h-8 text-qrz-orange" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Sem energia?</h3>
+              <h3 className="text-xl font-bold mb-3">Infraestrutura Sob Medida</h3>
               <p className="text-gray-400">
-                Tablets e terminais SmartPOS possuem bateria interna de longa duração. Mesmo durante quedas de energia, você continua atendendo normalmente utilizando nosso sistema na sua maquininha ou tablet.
+                Cada operação é única. Analisamos os equipamentos que sua empresa já possui e recomendamos a configuração ideal para garantir máxima disponibilidade e performance do sistema.
               </p>
             </div>
 
@@ -80,7 +80,7 @@ const NeverStopSellingSection = () => {
               </div>
               <h3 className="text-xl font-bold mb-3">Estabilidade 24/7</h3>
               <p className="text-gray-400">
-                Equipamentos robustos e software híbrido (online/offline) asseguram que seu restaurante opere com segurança e sem interrupções, oferecendo a melhor experiência aos clientes.
+                Equipamentos robustos e software preparado para diferentes cenários asseguram que seu restaurante opere com segurança e continuidade, oferecendo a melhor experiência aos clientes.
               </p>
             </div>
           </div>

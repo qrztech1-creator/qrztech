@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from "react";
 import { 
-  ExternalLink, 
   ShoppingBag, 
   Plane, 
   BookOpen, 
@@ -8,8 +7,7 @@ import {
   Stethoscope, 
   ShieldCheck, 
   Briefcase,
-  Layers,
-  Globe
+  Layers
 } from "lucide-react";
 
 export interface ClientPartner {
@@ -18,7 +16,7 @@ export interface ClientPartner {
   url: string;
   categoryId: string;
   categoryName: string;
-  logo?: string;
+  logo: string;
 }
 
 export interface CategoryDef {
@@ -46,6 +44,7 @@ const partners: ClientPartner[] = [
     url: "https://prive.qrztech.com/loja",
     categoryId: "loja-virtual",
     categoryName: "Loja Virtual",
+    logo: "https://prive.qrztech.com/assets/logo-prive-rzIR1ydI.png",
   },
   {
     id: "tcbeauty",
@@ -63,6 +62,7 @@ const partners: ClientPartner[] = [
     url: "https://anepe-reborn-hub.vercel.app/",
     categoryId: "turismo-viagens",
     categoryName: "Turismo e Viagens",
+    logo: "https://anepe-reborn-hub.vercel.app/assets/logo-anepe-_Q-kH-M_.png",
   },
   {
     id: "riocuiaba",
@@ -70,6 +70,7 @@ const partners: ClientPartner[] = [
     url: "https://riocuiabalodge.vercel.app/",
     categoryId: "turismo-viagens",
     categoryName: "Turismo e Viagens",
+    logo: "https://riocuiabalodge.vercel.app/assets/inicio/asset_2.png",
   },
   {
     id: "turismosqrz",
@@ -77,6 +78,7 @@ const partners: ClientPartner[] = [
     url: "https://www.turismos.qrztech.com/",
     categoryId: "turismo-viagens",
     categoryName: "Turismo e Viagens",
+    logo: "https://i.postimg.cc/x8v6gGx0/faviconqrz.png",
   },
   {
     id: "fishingbusiness",
@@ -94,6 +96,7 @@ const partners: ClientPartner[] = [
     url: "https://shop.qrztech.com/",
     categoryId: "infoprodutos",
     categoryName: "Infoprodutos",
+    logo: "https://i.postimg.cc/x8v6gGx0/faviconqrz.png",
   },
   {
     id: "arsenalqrz",
@@ -101,6 +104,7 @@ const partners: ClientPartner[] = [
     url: "https://arsenalqrz.qrztech.com/",
     categoryId: "infoprodutos",
     categoryName: "Infoprodutos",
+    logo: "https://i.postimg.cc/NGbqQP7r/arsenal.png",
   },
   {
     id: "formuladafala",
@@ -118,6 +122,7 @@ const partners: ClientPartner[] = [
     url: "https://www.royalx.com.br/",
     categoryId: "musica-eventos",
     categoryName: "Música e Eventos",
+    logo: "https://www.royalx.com.br/assets/logo-royal-x-DXbFhOv8.png",
   },
 
   // Saúde e Clínicas
@@ -193,12 +198,7 @@ const partners: ClientPartner[] = [
 
 const PartnersSection = () => {
   const [activeCategory, setActiveCategory] = useState<string>("all");
-  const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({});
   const sectionRef = useRef<HTMLDivElement>(null);
-
-  const handleImageError = (partnerId: string) => {
-    setImageErrors((prev) => ({ ...prev, [partnerId]: true }));
-  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -230,22 +230,19 @@ const PartnersSection = () => {
       : categories.filter((c) => c.id === activeCategory);
 
   return (
-    <section id="partners" className="py-16 bg-qrz-dark relative overflow-hidden border-t border-gray-800/40">
-      {/* Background glow effect */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-qrz-orange/5 rounded-full blur-[120px] pointer-events-none" />
-      
+    <section id="partners" className="py-12 bg-qrz-dark relative overflow-hidden">
       <div className="section-container relative z-10">
-        <div className="text-center mb-10">
+        <div className="text-center mb-8">
           <h2 className="section-title inline-block after:left-1/4 after:w-1/2">
-            Nossos Clientes por Setor
+            Nossos Clientes
           </h2>
           <p className="text-lg mt-4 text-gray-300 max-w-3xl mx-auto">
-            Conheça as empresas de diversos segmentos que confiam na <strong>QRZ Tech</strong> para impulsionar seus negócios.
+            Algumas empresas que já confiam em nossas soluções para impulsionar seus negócios.
           </p>
         </div>
 
         {/* Category Filter Tabs */}
-        <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-12">
+        <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-10">
           {categories.map((cat) => {
             const Icon = cat.icon;
             const isActive = activeCategory === cat.id;
@@ -253,108 +250,74 @@ const PartnersSection = () => {
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-full text-xs md:text-sm font-medium transition-all duration-300 ${
+                className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs md:text-sm font-medium transition-all duration-300 ${
                   isActive
-                    ? "bg-gradient-to-r from-qrz-orange to-orange-500 text-white shadow-lg shadow-qrz-orange/20 scale-105"
-                    : "bg-gray-900/80 text-gray-300 border border-gray-800 hover:border-gray-700 hover:text-white hover:bg-gray-800/80"
+                    ? "bg-qrz-orange text-white shadow-lg shadow-qrz-orange/20 scale-105"
+                    : "bg-gray-900/80 text-gray-300 border border-gray-800 hover:border-gray-700 hover:text-white"
                 }`}
               >
-                <Icon className={`w-4 h-4 ${isActive ? "text-white" : "text-qrz-orange"}`} />
+                <Icon className={`w-3.5 h-3.5 ${isActive ? "text-white" : "text-qrz-orange"}`} />
                 <span>{cat.name}</span>
               </button>
             );
           })}
         </div>
 
-        {/* Categorized Clients Display */}
-        <div ref={sectionRef} className="space-y-10 transition-all">
+        {/* Categorized Clients Display (Original Clean Logo Grid Format) */}
+        <div ref={sectionRef} className="space-y-10">
           {activeCategoryDefs.map((catDef) => {
             const catPartners = partners.filter((p) => p.categoryId === catDef.id);
             if (catPartners.length === 0) return null;
-            const CategoryIcon = catDef.icon;
 
             return (
-              <div key={catDef.id} className="bg-gray-900/40 rounded-2xl p-6 md:p-8 border border-gray-800/80 backdrop-blur-sm">
-                {/* Category Header */}
-                <div className="flex items-center justify-between mb-6 border-b border-gray-800/80 pb-4">
-                  <div className="flex items-center gap-3">
-                    <div className="p-2.5 rounded-xl bg-qrz-orange/10 border border-qrz-orange/20 text-qrz-orange">
-                      <CategoryIcon className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl md:text-2xl font-bold text-white font-montserrat">
-                        {catDef.name}
-                      </h3>
-                    </div>
-                  </div>
-                  <span className="text-xs font-semibold px-3 py-1 rounded-full bg-gray-800 text-gray-400 border border-gray-700">
-                    {catPartners.length} {catPartners.length === 1 ? "cliente" : "clientes"}
+              <div key={catDef.id} className="space-y-4">
+                {/* Category Subtitle */}
+                <div className="flex items-center gap-3 border-b border-gray-800/60 pb-2">
+                  <span className="text-sm font-bold uppercase tracking-wider text-qrz-orange">
+                    {catDef.name}
                   </span>
+                  <span className="text-xs text-gray-500">({catPartners.length})</span>
                 </div>
 
-                {/* Clients Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-                  {catPartners.map((partner) => {
-                    const hasValidLogo = partner.logo && !imageErrors[partner.id];
-
-                    return (
+                {/* Original Clean Logo Grid */}
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 items-center">
+                  {catPartners.map((partner) => (
+                    <div
+                      key={partner.id}
+                      className="group flex flex-col items-center justify-center p-4 bg-gray-900/50 rounded-lg hover:bg-gray-900/90 transition-all h-28 items-center border border-gray-800/60 hover:border-qrz-orange/40"
+                    >
                       <a
-                        key={partner.id}
                         href={partner.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group relative bg-[#0a1220]/90 hover:bg-[#101b2e] border border-gray-800/90 hover:border-qrz-orange/60 rounded-xl p-5 flex flex-col justify-between items-center text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-qrz-orange/5 min-h-[150px]"
+                        className="w-full h-full flex flex-col items-center justify-center gap-1"
                         aria-label={`Visitar site de ${partner.name}`}
+                        title={partner.name}
                       >
-                        {/* Glowing top accent line on hover */}
-                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0 group-hover:w-3/4 h-[2px] bg-gradient-to-r from-transparent via-qrz-orange to-transparent transition-all duration-500" />
-
-                        {/* Logo Container */}
-                        <div className="h-14 w-full flex items-center justify-center mb-3">
-                          {hasValidLogo ? (
-                            <img
-                              src={partner.logo}
-                              alt={partner.name}
-                              onError={() => handleImageError(partner.id)}
-                              className={`max-h-12 max-w-[85%] object-contain transition-all duration-300 group-hover:scale-105 ${
-                                partner.logo.includes("logo-branco") || partner.logo.includes("amplity")
-                                  ? ""
-                                  : "brightness-95 group-hover:brightness-110"
-                              }`}
-                              loading="lazy"
-                            />
-                          ) : (
-                            <div className="flex items-center justify-center gap-2 px-3.5 py-2 rounded-lg bg-qrz-orange/10 border border-qrz-orange/20 text-qrz-orange group-hover:border-qrz-orange/40 transition-colors">
-                              <Globe className="w-4 h-4 text-qrz-orange" />
-                              <span className="font-bold text-sm text-white tracking-wide">
-                                {partner.name}
-                              </span>
-                            </div>
-                          )}
-                        </div>
-
-                        {/* Client Info */}
-                        <div className="w-full">
-                          <h4 className="font-semibold text-sm text-gray-200 group-hover:text-white transition-colors line-clamp-1 mb-2">
-                            {partner.name}
-                          </h4>
-                          
-                          <div className="flex items-center justify-center gap-1.5 text-xs text-qrz-orange group-hover:text-orange-400 font-medium transition-colors">
-                            <span>Visitar site</span>
-                            <ExternalLink className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                          </div>
-                        </div>
+                        <img
+                          src={partner.logo}
+                          alt={partner.name}
+                          className={`max-h-14 max-w-full object-contain filter transition-all duration-300 group-hover:scale-105 ${
+                            partner.logo.includes("logo-branco") || partner.logo.includes("amplity")
+                              ? ""
+                              : "brightness-95 group-hover:brightness-110"
+                          }`}
+                          loading="lazy"
+                        />
+                        <span className="text-[11px] text-gray-400 group-hover:text-qrz-orange transition-colors truncate max-w-full px-1 text-center font-medium">
+                          {partner.name}
+                        </span>
                       </a>
-                    );
-                  })}
+                    </div>
+                  ))}
                 </div>
               </div>
             );
           })}
         </div>
 
-        <div className="text-center mt-12 pt-6 border-t border-gray-800/60">
-          <p className="text-gray-400 text-sm md:text-base">
+        <div className="text-center mt-10">
+          <p className="text-gray-400 text-sm">
             E muitas outras empresas que já transformaram seus processos com a <strong className="text-white font-semibold">QRZ Tech</strong>.
           </p>
         </div>

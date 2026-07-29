@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { Database, Code, Network, Cpu, Settings, MessageSquare, TrendingUp, Users, Smartphone, Store, Utensils, Receipt, Building2, Zap } from "lucide-react";
+import { Settings, Utensils, Store, Smartphone, TrendingUp, Network, Code, Building2 } from "lucide-react";
 import { Link } from 'react-router-dom';
 
 interface Solution {
@@ -11,7 +11,6 @@ interface Solution {
 }
 
 const SolutionsSection = () => {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
   
   const solutions: Solution[] = [
@@ -33,12 +32,6 @@ const SolutionsSection = () => {
       link: "/varejo"
     },
     {
-      title: "QRZ Serviços",
-      description: "Plataforma avançada para prestadores de serviços, emissão de OS, agendamentos inteligentes e gestão de cobranças recorrentes.",
-      icon: Receipt,
-      link: "/serv"
-    },
-    {
       title: "CoutureFit",
       description: "Provador virtual inteligente para lojas físicas e virtuais, proporcionando uma experiência de compra incrível e assertiva para o seu cliente.",
       icon: Smartphone,
@@ -49,6 +42,11 @@ const SolutionsSection = () => {
       description: "Sistema comparativo de preços em tempo real entre fornecedores para bares e restaurantes, visando máxima economia no dia a dia do comércio.",
       icon: TrendingUp,
       badge: "Em breve"
+    },
+    {
+      title: "Método de Prospecção",
+      description: "Sistema de busca e captação automática de clientes potenciais nos nichos e lugares específicos mapeados como ideais para a sua empresa.",
+      icon: Network
     },
     {
       title: "Desenvolvimento WEB",
@@ -78,7 +76,6 @@ const SolutionsSection = () => {
     const children = sectionRef.current?.querySelectorAll('.solution-card');
     if (children) {
       children.forEach((child, index) => {
-        // Add staggered animation delay
         (child as HTMLElement).style.animationDelay = `${0.1 + index * 0.1}s`;
         observer.observe(child);
       });

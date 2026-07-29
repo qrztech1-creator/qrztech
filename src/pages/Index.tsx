@@ -1,4 +1,3 @@
-
 import AboutSection from "../components/AboutSection";
 import ContactSection from "../components/ContactSection";
 import Footer from "../components/Footer";
@@ -17,10 +16,10 @@ const Index = () => {
       <HeroSection />
       <AboutSection />
       <SolutionsSection />
+      <PartnersSection />
       <PortfolioSection />
       <div className="py-6"></div> {/* Additional spacing between Portfolio and Flows sections */}
       <N8nFlowsSection />
-      <PartnersSection />
       <ContactSection />
       <Footer />
       <WhatsAppButton />

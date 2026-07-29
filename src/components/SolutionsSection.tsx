@@ -1,4 +1,3 @@
-
 import { useState, useRef, useEffect } from 'react';
 import { Database, Code, Network, Cpu, Settings, MessageSquare, TrendingUp, Users, Smartphone, Store, Utensils, Receipt, Building2, Zap } from "lucide-react";
 import { Link } from 'react-router-dom';
@@ -31,34 +30,35 @@ const SolutionsSection = () => {
       title: "QRZ Store",
       description: "A tecnologia ideal para lojas e frente de caixa no varejo, unificando controle de estoque, vendas e emissão fiscal de maneira ágil.",
       icon: Store,
-      badge: "Em breve"
+      link: "/varejo"
     },
     {
-      title: "QRZ Inv",
-      description: "Plataforma avançada para gestão de serviços, emissão de OS e cobranças recorrentes, construindo uma experiência digital direta.",
+      title: "QRZ Serviços",
+      description: "Plataforma avançada para prestadores de serviços, emissão de OS, agendamentos inteligentes e gestão de cobranças recorrentes.",
       icon: Receipt,
-      badge: "Em breve"
+      link: "/serv"
     },
     {
       title: "CoutureFit",
       description: "Provador virtual inteligente para lojas físicas e virtuais, proporcionando uma experiência de compra incrível e assertiva para o seu cliente.",
-      icon: Smartphone
-    },
-    {
-      title: "Método de Prospecção",
-      description: "Sistema de busca e captação automática de clientes potenciais nos nichos e lugares específicos mapeados como ideais para a sua empresa.",
-      icon: Network
+      icon: Smartphone,
+      badge: "Em breve"
     },
     {
       title: "QRZ Compare",
       description: "Sistema comparativo de preços em tempo real entre fornecedores para bares e restaurantes, visando máxima economia no dia a dia do comércio.",
       icon: TrendingUp,
-      badge: "Em finalização"
+      badge: "Em breve"
     },
     {
-      title: "Desenvolvimento WEB e Consultoria",
-      description: "Criação de aplicações corporativas sob medida e consultoria especializada para elevar o nível de maturidade tecnológica e arquitetural do seu negócio.",
+      title: "Desenvolvimento WEB",
+      description: "Criação de aplicações web e sistemas corporativos sob medida, responsivos, de alta performance e arquitetura escalável.",
       icon: Code
+    },
+    {
+      title: "Consultoria Tecnológica",
+      description: "Consultoria especializada para elevar o nível de maturidade tecnológica, arquitetura de sistemas e automação do seu negócio.",
+      icon: Building2
     }
   ];
 
@@ -107,27 +107,31 @@ const SolutionsSection = () => {
           {solutions.map((solution, index) => {
             const CardContent = (
               <div 
-                className="solution-card opacity-0 h-full bg-qrz-dark p-6 rounded-xl border border-gray-800 hover:border-qrz-orange/50 transition-all duration-300 hover:-translate-y-1 w-full max-w-sm md:max-w-none text-center md:text-left"
+                className="solution-card opacity-0 h-full bg-qrz-dark p-6 rounded-xl border border-gray-800 hover:border-qrz-orange/50 transition-all duration-300 hover:-translate-y-1 w-full max-w-sm md:max-w-none text-center md:text-left flex flex-col justify-between"
               >
-                <div className="w-14 h-14 mb-5 rounded-lg flex items-center justify-center bg-gradient-to-r from-qrz-blue to-qrz-blue-light mx-auto md:mx-0">
-                  {solution.title === 'QRZ Food' ? (
-                    <img src="https://i.postimg.cc/X7znNcFg/qrzfood.png" alt="QRZ Food" className="w-[80%] h-auto object-contain drop-shadow-md brightness-0 invert" />
-                  ) : (
-                    <solution.icon className="w-7 h-7 text-white flex-shrink-0" />
-                  )}
+                <div>
+                  <div className="w-14 h-14 mb-5 rounded-lg flex items-center justify-center bg-gradient-to-r from-qrz-blue to-qrz-blue-light mx-auto md:mx-0">
+                    {solution.title === 'QRZ Food' ? (
+                      <img src="https://i.postimg.cc/X7znNcFg/qrzfood.png" alt="QRZ Food" className="w-[80%] h-auto object-contain drop-shadow-md brightness-0 invert" />
+                    ) : (
+                      <solution.icon className="w-7 h-7 text-white flex-shrink-0" />
+                    )}
+                  </div>
+                  <div className="flex items-center justify-center md:justify-start gap-2 mb-3">
+                    <h3 className="text-xl font-bold font-montserrat text-white hover:text-qrz-orange transition-colors">{solution.title}</h3>
+                    {solution.badge && (
+                      <span className="bg-qrz-orange/20 text-qrz-orange text-xs px-2 py-1 rounded-full whitespace-nowrap font-medium">
+                        {solution.badge}
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-gray-400 text-sm leading-relaxed">{solution.description}</p>
                 </div>
-                <div className="flex items-center justify-center md:justify-start gap-2 mb-3">
-                  <h3 className="text-xl font-bold font-montserrat text-white hover:text-qrz-orange transition-colors">{solution.title}</h3>
-                  {solution.badge && (
-                    <span className="bg-qrz-orange/20 text-qrz-orange text-xs px-2 py-1 rounded-full whitespace-nowrap">
-                      {solution.badge}
-                    </span>
-                  )}
-                </div>
-                <p className="text-gray-400">{solution.description}</p>
+
                 {solution.link && (
-                  <div className="mt-4 text-qrz-orange text-sm font-semibold hover:underline">
-                    Ver mais →
+                  <div className="mt-4 text-qrz-orange text-sm font-semibold hover:underline flex items-center justify-center md:justify-start gap-1">
+                    <span>Ver mais</span>
+                    <span>→</span>
                   </div>
                 )}
               </div>
